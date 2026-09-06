@@ -1,17 +1,19 @@
-// Real eRomman destination links (https://www.eromman.com)
 export const EROMMAN_LINKS = {
   home: "https://www.eromman.com/",
+  pricing: "https://www.eromman.com/pricing/",
   sell: "https://www.eromman.com/sell-on-eromman-to-the-middle-east/",
   sellerLogin: "https://eromman.com/vendor.php",
   register: "https://www.eromman.com/profiles-add/",
   contact: "https://www.eromman.com/contact-us/",
-  whatsappUAE:
-    "https://api.whatsapp.com/send?phone=971525062772&text=Hi%20eRomman!%20I%27d%20like%20to%20learn%20about%20selling%20in%20the%20GCC.",
-  whatsappKSA:
-    "https://api.whatsapp.com/send?phone=966565246967&text=Hi%20eRomman!%20I%27d%20like%20to%20learn%20about%20selling%20in%20the%20GCC.",
+  sellerSupportEmail: "mailto:mamduh.sellers@eromman.com",
+  sellerSupportPhone: "tel:+60126413812",
+  sellerSupportWhatsapp:
+    "https://wa.me/60126413812?text=Hi%20Mamduh%2C%20I%27d%20like%20to%20learn%20more%20about%20selling%20in%20the%20GCC%20with%20eRomman.",
 } as const
 
-export const EROMMAN_PHONES = {
-  uae: "+971 52 506 2772",
-  ksa: "+966 56 524 6967",
+export const SELLER_SUPPORT = {
+  name: "Muhammad Mamduh Bin Saffin",
+  role: "E-commerce Seller Support & Marketing Executive",
+  email: "mamduh.sellers@eromman.com",
+  phone: "+60 12 641 3812",
 } as const

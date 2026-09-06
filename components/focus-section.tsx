@@ -1,35 +1,35 @@
-import { BarChart3, Target, CheckCircle2, Rocket, LineChart, Handshake } from "lucide-react"
+import { BarChart3, Globe2, Languages, Megaphone, Route, Truck } from "lucide-react"
 
 const items = [
   {
+    icon: Languages,
+    title: "Arabic Localisation",
+    description: "Arabic-first product listing support, translation and localisation for GCC-facing marketplace content.",
+  },
+  {
+    icon: Globe2,
+    title: "Marketplace Visibility",
+    description: "Improve product discoverability and brand exposure among target consumers in the Gulf.",
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing Support",
+    description: "Campaign participation and targeted promotional support to build awareness and engagement.",
+  },
+  {
     icon: BarChart3,
-    title: "Market Research & Analysis",
-    description: "Deep analysis of the GCC wellness market, consumer trends, and category opportunities.",
+    title: "Market Validation",
+    description: "Assess demand, customer response and product performance before scaling further.",
   },
   {
-    icon: Target,
-    title: "Strategic Seller Identification",
-    description: "Identify Malaysian brands with strong product-market fit for GCC expansion.",
+    icon: Route,
+    title: "Expansion Planning",
+    description: "Use validated demand to decide which products and GCC markets deserve the next stage of investment.",
   },
   {
-    icon: CheckCircle2,
-    title: "Market Entry Framework",
-    description: "A proven methodology for validating and entering GCC markets with confidence.",
-  },
-  {
-    icon: Rocket,
-    title: "Marketplace Access",
-    description: "Direct access to eRomman's Arabic marketplace and 50M+ Gulf consumers.",
-  },
-  {
-    icon: LineChart,
-    title: "Growth Tools & Analytics",
-    description: "ROI calculator, metrics dashboard, and end-to-end performance tracking.",
-  },
-  {
-    icon: Handshake,
-    title: "Partnership Support",
-    description: "Dedicated business development support and ongoing partnership management.",
+    icon: Truck,
+    title: "Cross-Border Support",
+    description: "Order coordination, logistics support and Fulfilled by eRomman pathways for suitable sellers.",
   },
 ]
 
@@ -38,13 +38,12 @@ export function FocusSection() {
     <section id="focus" className="border-t border-border bg-card/40 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">What we do</p>
-          <h2 className="mt-3 text-balance font-serif text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
-            Our business development focus
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary">Seller support</p>
+          <h2 className="mt-3 text-balance font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            What eRomman helps sellers do
           </h2>
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
-            An integrated approach that takes brands from research to shelf across the Gulf&apos;s
-            fastest-growing wellness categories.
+            Keep the seller focused on the product while eRomman supports the market-facing work required to reach GCC customers.
           </p>
         </div>
 
@@ -54,7 +53,7 @@ export function FocusSection() {
               <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                 <Icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-5 font-serif text-xl font-medium text-foreground">{title}</h3>
+              <h3 className="mt-5 font-serif text-xl font-semibold text-foreground">{title}</h3>
               <p className="mt-2 leading-relaxed text-muted-foreground">{description}</p>
             </article>
           ))}
