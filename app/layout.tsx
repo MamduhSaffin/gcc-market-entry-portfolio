@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
-const siteUrl = "https://mamduhsaffin.github.io/gcc-market-entry-portfolio/"
+const siteUrl = "https://mamduhsaffin.github.io/sell-to-the-middle-east/"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
       "A simple guide for Malaysian sellers exploring Middle East customers through eRomman.",
   },
   icons: {
-    icon: "https://mamduhsaffin.github.io/gcc-market-entry-portfolio/icon.svg",
-    apple: "https://mamduhsaffin.github.io/gcc-market-entry-portfolio/apple-icon.png",
+    icon: "https://mamduhsaffin.github.io/sell-to-the-middle-east/icon.svg",
+    apple: "https://mamduhsaffin.github.io/sell-to-the-middle-east/apple-icon.png",
   },
 }
 

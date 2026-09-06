@@ -25,7 +25,7 @@ The content is aligned to the seller-facing eRomman materials used in September 
 
 ## Live seller guide
 
-https://mamduhsaffin.github.io/gcc-market-entry-portfolio/
+https://mamduhsaffin.github.io/sell-to-the-middle-east/
 
 ## Contact
 
