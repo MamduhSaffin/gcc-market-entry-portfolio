@@ -57,12 +57,12 @@ export function SettlementCalculator() {
     <section id="fees" className="border-t border-border py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">Seller Charges & Settlement Guide</p>
-          <h2 className="mt-3 text-balance font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Estimate your seller settlement
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary">Seller charges & settlement</p>
+          <h2 className="mt-3 text-balance font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+            No sale, no commission
           </h2>
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
-            Commission is charged only when the customer successfully receives the product and the order is completed. Pickup is RM7 per order when eRomman collects, or RM0 pickup fee when the seller ships independently.
+            Commission is charged only when the customer successfully receives the product and the order is completed. Use the calculator below for a simple settlement estimate.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export function SettlementCalculator() {
             "Commission after sale",
           ].map((item) => (
             <div key={item} className="flex items-center gap-2 rounded-xl border border-border bg-card p-4 text-sm font-medium">
-              <CheckCircle2 className="h-4 w-4 text-primary" />
+              <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
               {item}
             </div>
           ))}
@@ -162,7 +162,7 @@ export function SettlementCalculator() {
           </div>
 
           <div className="flex flex-col rounded-2xl border border-border bg-primary p-6 text-primary-foreground lg:col-span-2 lg:p-8">
-            <h3 className="font-serif text-xl font-semibold">Estimated settlement</h3>
+            <h3 className="font-serif text-xl font-semibold">Estimated seller settlement</h3>
             <dl className="mt-6 space-y-4 text-sm">
               <div className="flex items-center justify-between gap-4">
                 <dt className="text-primary-foreground/70">Seller price</dt>

@@ -1,59 +1,39 @@
 const steps = [
-  {
-    number: "01",
-    title: "Visibility",
-    description: "Establish marketplace presence and improve product discoverability among target GCC consumers.",
-  },
-  {
-    number: "02",
-    title: "Awareness",
-    description: "Build brand awareness through marketplace exposure, digital campaigns and targeted consumer outreach.",
-  },
-  {
-    number: "03",
-    title: "Engagement",
-    description: "Strengthen purchase consideration through continuous engagement and marketplace activity.",
-  },
-  {
-    number: "04",
-    title: "Market Validation",
-    description: "Evaluate market demand, consumer response and product performance to identify scalable opportunities.",
-  },
-  {
-    number: "05",
-    title: "Expansion",
-    description: "Scale validated products across GCC markets through a structured, sustainable growth strategy.",
-  },
+  { number: "01", title: "Start", description: "Select a manageable number of suitable products." },
+  { number: "02", title: "Test", description: "Introduce the products to Middle East customers and marketplace activity." },
+  { number: "03", title: "Learn", description: "Observe customer response, demand signals and consumer behaviour." },
+  { number: "04", title: "Validate", description: "Use evidence to identify products with stronger market potential." },
+  { number: "05", title: "Scale", description: "Expand the range and market activity based on validated opportunity." },
 ]
 
 export function FrameworkSection() {
   return (
     <section id="framework" className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">The eRomman approach</p>
-          <h2 className="mt-3 text-balance font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            A structured GCC market-entry framework
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary">Evidence before expansion</p>
+          <h2 className="mt-3 text-balance font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+            Start small. Test the market. Scale what works.
           </h2>
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
-            Move from initial marketplace presence to validated expansion rather than treating cross-border growth as a one-step listing exercise.
+            You do not need to list every product from day one. eRomman's market-validation framework is designed to reduce the commitment of testing a new region.
           </p>
         </div>
 
-        <ol className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {steps.map((step) => (
             <li key={step.number} className="relative rounded-2xl border border-border bg-card p-6">
-              <span className="font-serif text-4xl font-semibold text-primary/35">{step.number}</span>
-              <h3 className="mt-4 font-serif text-xl font-semibold text-foreground">{step.title}</h3>
+              <span className="font-serif text-4xl font-semibold text-primary/30">{step.number}</span>
+              <h3 className="mt-4 font-serif text-xl font-semibold">{step.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.description}</p>
             </li>
           ))}
         </ol>
 
         <div className="mt-10 rounded-2xl border border-primary/15 bg-primary/5 p-6">
-          <p className="font-semibold text-primary">Start small → test the market → build orders → scale up</p>
+          <p className="font-semibold text-primary">How customers move toward purchase</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Sellers do not need to list every product at once. A few suitable SKUs can be used to test customer response before expanding the range.
+            Arabic content → awareness → engagement → marketplace discovery → purchase → repeat purchase.
           </p>
         </div>
       </div>

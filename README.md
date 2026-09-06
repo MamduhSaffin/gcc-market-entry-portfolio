@@ -1,64 +1,33 @@
-# GCC Market Entry Portfolio
+# Sell to the Middle East with eRomman
 
-A professional web portfolio by **Muhammad Mamduh Bin Saffin**, E-commerce Seller Support & Marketing Executive, presenting a structured GCC market-entry approach for Malaysian sellers and brands working with eRomman.
+A seller-facing microsite prepared by **Muhammad Mamduh Bin Saffin** to make eRomman's Middle East selling model easier for Malaysian brands to understand.
 
-## Portfolio focus
+## What this page explains
 
-- Arabic localisation and marketplace readiness
-- GCC marketplace visibility
-- Digital marketing and campaign participation
-- Market validation before scaling
-- Cross-border order and logistics coordination
-- Seller subscription and settlement guidance
-- Saudi Arabia, UAE, Kuwait, Qatar, Bahrain and Oman
+- What eRomman is
+- How the seller process works
+- What changes — and what does not change — for the seller
+- Arabic localisation, marketing, marketplace and logistics support
+- Marketplace opportunities across the eRomman ecosystem
+- Start → Test → Learn → Validate → Scale market-validation framework
+- September 2026 subscription plans and promotion
+- Seller commission, pickup fees and settlement timing
+- Seller FAQ, including returns and payment arrangements
+- Direct seller-support contact
 
-The portfolio is designed to communicate the seller journey clearly: **build visibility → create awareness → drive engagement → validate demand → expand strategically**.
+## Source materials
 
-## Current commercial information
+The content is aligned to the seller-facing eRomman materials used in September 2026:
 
-The site reflects the September 2026 Hari Malaysia promotion and the current seller charge structure used in the supplied eRomman materials:
+- eRomman Corporate Profile 2.0
+- eRomman Seller Presentation — English — September 2026
+- eRomman Subscription & Seller Charges — September 2026
 
-- Silver: RM645 promotional price
-- Gold: RM1,645 promotional price
-- Platinum: RM5,000 promotional price
-- Pro Platinum: custom package
-- Promotion: 50% off + 8 extra months, total 20 months, valid until 30 September 2026
-- Commission: category-dependent and charged after a successful sale
-- Pickup: RM7 when eRomman collects; RM0 pickup fee when the seller ships independently
-- Seller payment: within 10–15 working days after successful delivery
-
-## Tech stack
-
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- GitHub Pages static export
-
-## Local development
-
-```bash
-pnpm install
-pnpm dev
-```
-
-Open `http://localhost:3000`.
-
-## Type check
-
-```bash
-pnpm check
-```
-
-## GitHub Pages deployment
-
-The repository includes a GitHub Actions workflow that builds a static Next.js export and deploys the `out` directory to GitHub Pages.
-
-Live portfolio:
+## Live seller guide
 
 https://mamduhsaffin.github.io/gcc-market-entry-portfolio/
 
-## Seller support
+## Contact
 
 **Muhammad Mamduh Bin Saffin**  
 E-commerce Seller Support & Marketing Executive  
@@ -66,5 +35,3 @@ mamduh.sellers@eromman.com
 +60 12 641 3812
 
 Official eRomman website: https://www.eromman.com/
-
-> This repository is a professional portfolio and is not the primary eRomman corporate website.

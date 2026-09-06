@@ -8,6 +8,7 @@ type Plan = {
   blurb: string
   price: string
   normalPrice: string
+  monthly?: string
   features: string[]
   featured?: boolean
 }
@@ -16,9 +17,10 @@ const plans: Plan[] = [
   {
     name: "Silver",
     tier: "Starter Package",
-    blurb: "Best for new sellers starting their GCC journey.",
+    blurb: "Best for new sellers starting their Middle East journey.",
     price: "RM645",
     normalPrice: "RM1,290",
+    monthly: "≈ RM54/month",
     features: [
       "Seller onboarding",
       "Middle East marketplace access",
@@ -30,9 +32,10 @@ const plans: Plan[] = [
   {
     name: "Gold",
     tier: "Growth Package",
-    blurb: "Best for growing brands and SMEs.",
+    blurb: "Best for growing brands and SMEs that want more localisation and campaign support.",
     price: "RM1,645",
     normalPrice: "RM3,290",
+    monthly: "≈ RM137/month",
     features: [
       "Everything in Silver",
       "Arabic localisation",
@@ -45,7 +48,7 @@ const plans: Plan[] = [
   {
     name: "Platinum",
     tier: "Visibility Growth Package",
-    blurb: "Best for established brands seeking regional expansion.",
+    blurb: "Best for established brands seeking stronger regional expansion support.",
     price: "RM5,000",
     normalPrice: "RM10,000",
     features: [
@@ -59,7 +62,7 @@ const plans: Plan[] = [
   {
     name: "Pro Platinum",
     tier: "Corporate / Enterprise",
-    blurb: "Best for large-scale operations requiring a tailored package.",
+    blurb: "Best for larger operations requiring a tailored regional package.",
     price: "Custom package",
     normalPrice: "Contact us",
     features: [
@@ -78,20 +81,23 @@ export function PricingSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">Hari Malaysia Special — September 2026</p>
-          <h2 className="mt-3 text-balance font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Current eRomman annual subscription plans
+          <h2 className="mt-3 text-balance font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+            A lighter way to start exploring the Middle East market
           </h2>
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
-            The September promotion offers 50% off the listed packages plus 8 extra months of membership, giving a total of 20 months. Valid until 30 September 2026.
+            The September offer provides 50% off the published package prices plus 8 extra months of membership, giving a total membership period of 20 months. Valid until 30 September 2026.
           </p>
         </div>
 
         <div className="mt-8 rounded-2xl border border-primary/20 bg-primary p-5 text-primary-foreground sm:flex sm:items-center sm:justify-between sm:gap-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">September promotion</p>
-            <p className="mt-1 font-serif text-2xl font-semibold">50% off + 8 months extra membership</p>
+            <p className="mt-1 font-serif text-2xl font-semibold">50% off + 8 extra months</p>
           </div>
-          <p className="mt-3 text-sm text-primary-foreground/75 sm:mt-0">Total membership: 20 months</p>
+          <div className="mt-3 sm:mt-0 sm:text-right">
+            <p className="font-semibold">Total membership: 20 months</p>
+            <p className="text-sm text-primary-foreground/70">Valid until 30 September 2026</p>
+          </div>
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-4">
@@ -111,14 +117,17 @@ export function PricingSection() {
                 </span>
               )}
               <p className="text-xs font-semibold uppercase tracking-wider text-primary">{plan.tier}</p>
-              <h3 className="mt-1 font-serif text-2xl font-semibold text-foreground">{plan.name}</h3>
-              <p className="mt-3 min-h-[3rem] text-sm leading-relaxed text-muted-foreground">{plan.blurb}</p>
+              <h3 className="mt-1 font-serif text-2xl font-semibold">{plan.name}</h3>
+              <p className="mt-3 min-h-[4.5rem] text-sm leading-relaxed text-muted-foreground">{plan.blurb}</p>
 
               <div className="mt-5">
-                <p className="font-serif text-3xl font-semibold text-foreground">{plan.price}</p>
+                <p className="font-serif text-3xl font-semibold">{plan.price}</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Normal: <span className={plan.normalPrice.startsWith("RM") ? "line-through" : ""}>{plan.normalPrice}</span>
                 </p>
+                {plan.monthly && (
+                  <p className="mt-2 text-sm font-semibold text-primary">{plan.monthly}</p>
+                )}
               </div>
 
               <ul className="mt-6 flex-1 space-y-3">
@@ -132,19 +141,19 @@ export function PricingSection() {
 
               <Button
                 nativeButton={false}
-                render={<a href={EROMMAN_LINKS.pricing} target="_blank" rel="noopener noreferrer" />}
+                render={<a href={EROMMAN_LINKS.sellerSupportWhatsapp} target="_blank" rel="noopener noreferrer" />}
                 variant={plan.featured ? "default" : "outline"}
                 className="mt-7 w-full rounded-full"
               >
-                View Pricing
+                Ask About This Plan
               </Button>
             </article>
           ))}
         </div>
 
-        <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-          Commission is separate from the subscription plan and is charged only after a successful sale. Typical rates depend on product category; use the calculator below for an estimate.
-        </p>
+        <div className="mt-6 rounded-2xl border border-border bg-card p-5 text-sm leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">Annual subscription applies.</strong> The monthly figures shown for Silver and Gold are simple annual-cost equivalents. If one-shot payment is difficult, payment arrangements can be discussed with the seller support team.
+        </div>
       </div>
     </section>
   )

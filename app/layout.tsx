@@ -1,45 +1,44 @@
 import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
-const portfolioUrl = "https://mamduhsaffin.github.io/gcc-market-entry-portfolio/"
+const siteUrl = "https://mamduhsaffin.github.io/gcc-market-entry-portfolio/"
 
 export const metadata: Metadata = {
-  metadataBase: new URL(portfolioUrl),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Muhammad Mamduh | GCC Market Entry Portfolio — eRomman",
-    template: "%s | GCC Market Entry Portfolio",
+    default: "Sell to the Middle East with eRomman | Seller Guide",
+    template: "%s | eRomman Seller Guide",
   },
   description:
-    "A professional GCC market-entry portfolio presenting eRomman seller support for Malaysian brands: Arabic localisation, marketplace visibility, digital marketing, market validation, logistics coordination and GCC expansion.",
+    "A simple seller guide for Malaysian brands exploring the Middle East with eRomman: how it works, Arabic support, marketplace opportunities, seller plans, fees, settlement and next steps.",
   keywords: [
-    "GCC market entry",
-    "Middle East e-commerce",
-    "Malaysia GCC",
+    "sell to Middle East",
+    "eRomman seller guide",
+    "Malaysia Middle East e-commerce",
     "Saudi Arabia marketplace",
     "UAE marketplace",
-    "eRomman",
-    "seller acquisition",
-    "Arabic localisation",
-    "cross-border e-commerce",
+    "Arabic marketplace",
+    "cross-border e-commerce Malaysia",
+    "GCC selling",
   ],
   authors: [{ name: "Muhammad Mamduh Bin Saffin" }],
   creator: "Muhammad Mamduh Bin Saffin",
   alternates: {
-    canonical: portfolioUrl,
+    canonical: siteUrl,
   },
   openGraph: {
     type: "website",
-    url: portfolioUrl,
-    title: "GCC Market Entry Portfolio — eRomman",
+    url: siteUrl,
+    title: "Sell to the Middle East with eRomman",
     description:
-      "Structured GCC market-entry support for Malaysian brands: build visibility, validate demand and scale strategically.",
-    siteName: "GCC Market Entry Portfolio",
+      "See how Malaysian sellers can start small, reach Middle East customers and test demand with eRomman.",
+    siteName: "eRomman Seller Guide",
   },
   twitter: {
     card: "summary",
-    title: "GCC Market Entry Portfolio — eRomman",
+    title: "Sell to the Middle East with eRomman",
     description:
-      "Structured GCC market-entry support for Malaysian brands.",
+      "A simple guide for Malaysian sellers exploring Middle East customers through eRomman.",
   },
   icons: {
     icon: "https://mamduhsaffin.github.io/gcc-market-entry-portfolio/icon.svg",

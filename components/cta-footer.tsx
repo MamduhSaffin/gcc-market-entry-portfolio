@@ -11,12 +11,12 @@ export function CtaFooter() {
           <div className="overflow-hidden rounded-3xl border border-primary/15 bg-gradient-to-br from-primary to-red-900 text-primary-foreground shadow-xl shadow-primary/10">
             <div className="grid gap-10 px-6 py-12 sm:px-10 lg:grid-cols-5 lg:px-14 lg:py-16">
               <div className="lg:col-span-3">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Seller support contact</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Start small</p>
                 <h2 className="mt-3 max-w-2xl text-balance font-serif text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-                  Discuss whether your products are ready for the GCC market
+                  Let’s test the Middle East market together.
                 </h2>
                 <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-primary-foreground/80">
-                  Start with a practical market-fit discussion, select suitable SKUs and map the next step without disrupting your current Malaysia operations.
+                  Send me your brand or product link. I can help review which products may be suitable to start with and explain the eRomman process clearly before you decide.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Button
@@ -81,9 +81,9 @@ export function CtaFooter() {
 
       <footer className="border-t border-border bg-card/40">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted-foreground sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <p>Portfolio © {new Date().getFullYear()} Muhammad Mamduh Bin Saffin.</p>
+          <p>Seller guide prepared by Muhammad Mamduh Bin Saffin.</p>
           <p className="max-w-2xl lg:text-right">
-            Professional portfolio based on eRomman seller-support materials. For official corporate information, visit{" "}
+            For official eRomman corporate information, policies and registration, visit{" "}
             <a
               href={EROMMAN_LINKS.home}
               target="_blank"
