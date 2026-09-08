@@ -6,6 +6,7 @@ import {
   CheckCircle2,
   ExternalLink,
   Globe2,
+  Linkedin,
   Languages,
   Mail,
   Menu,
@@ -1345,7 +1346,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{t.cta.eyebrow}</p>
                   <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl lg:text-5xl">{t.cta.title}</h2>
                   <p className="mt-5 max-w-xl text-lg leading-relaxed text-primary-foreground/80">{t.cta.body}</p>
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <div className="mt-8 flex flex-wrap gap-3">
                     <a
                       href={EROMMAN_LINKS.sellerSupportWhatsapp}
                       target="_blank"
@@ -1361,6 +1362,15 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
                     >
                       <Mail className="h-4 w-4" />
                       {t.cta.email}
+                    </a>
+                    <a
+                      href={EROMMAN_LINKS.sellerSupportLinkedIn}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3 text-sm font-semibold"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                      LinkedIn
                     </a>
                   </div>
                 </div>
@@ -1383,6 +1393,15 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
                       <Phone className="h-4 w-4 text-primary" />
                       {SELLER_SUPPORT.phone}
                     </a>
+                    <a
+                      href={EROMMAN_LINKS.sellerSupportLinkedIn}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 hover:text-primary"
+                    >
+                      <Linkedin className="h-4 w-4 text-primary" />
+                      View professional LinkedIn
+                    </a>
                     <a href={EROMMAN_LINKS.home} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary">
                       <ExternalLink className="h-4 w-4 text-primary" />
                       www.eromman.com
@@ -1397,7 +1416,18 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
 
       <footer className="border-t border-border bg-card/40">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-10 text-sm text-muted-foreground sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <p>{t.cta.footer}</p>
+          <div>
+            <p>{t.cta.footer}</p>
+            <a
+              href={EROMMAN_LINKS.sellerSupportLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
+            >
+              <Linkedin className="h-4 w-4" />
+              Connect with Mamduh on LinkedIn
+            </a>
+          </div>
           <p>{t.cta.official}</p>
         </div>
       </footer>
