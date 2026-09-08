@@ -902,15 +902,15 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
 
   return (
     <div dir={t.dir} lang={lang === "bm" ? "ms" : lang} className={isArabic ? "font-sans" : ""}>
-      <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur-md">
-        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-50 border-b border-red-100/80 bg-white/95 shadow-[0_8px_30px_rgba(120,10,18,0.06)] backdrop-blur-xl">
+        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
           <a href={(SITE_BASE_PATH || "") + "/"} className="flex shrink-0 items-center" aria-label="eRomman seller guide">
             <img
               src={SITE_BASE_PATH + "/images/eromman-logo.png"}
               alt="eRomman"
               width={1157}
               height={238}
-              className="h-8 w-auto sm:h-9"
+              className="h-9 w-auto sm:h-10"
             />
           </a>
 
@@ -950,7 +950,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
               href={EROMMAN_LINKS.sellerSupportWhatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
+              className="rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:shadow-xl"
             >
               {t.nav.check}
             </a>
@@ -1006,22 +1006,38 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
       </header>
 
       <main>
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-gradient-to-b from-primary/8 to-transparent" />
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-20 pt-12 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:pt-20">
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-                <Globe2 className="h-3.5 w-3.5" />
-                {t.hero.badge}
-              </span>
-              <h1 className="mt-6 text-balance font-serif text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.45rem]">
-                {t.hero.title}
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{t.hero.body}</p>
+        <section className="relative overflow-hidden bg-[#fffaf7]">
+          <div className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+            <div className="absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full bg-accent/15 blur-3xl" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent" />
+          </div>
 
-              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-12 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-24 lg:pt-16">
+            <div className="relative z-10">
+              <p className="text-xs font-bold uppercase tracking-[0.32em] text-primary">
+                {lang === "en" ? "Malaysian Brands · Global Opportunities" : lang === "bm" ? "Jenama Malaysia · Peluang Global" : "علامات ماليزية · فرص عالمية"}
+              </p>
+
+              <div className="mt-5 h-0.5 w-14 bg-accent" />
+
+              <h1 className="mt-5 text-balance text-[2.65rem] font-black leading-[0.98] tracking-[-0.045em] text-[#171312] sm:text-6xl lg:text-[4.8rem]">
+                <span className="block">
+                  {lang === "en" ? "YOUR GATEWAY TO" : lang === "bm" ? "PINTU MASUK ANDA KE" : "بوابتك إلى"}
+                </span>
+                <span className="mt-1 block text-primary">
+                  {lang === "en" ? "THE MIDDLE EAST" : lang === "bm" ? "PASARAN TIMUR TENGAH" : "سوق الشرق الأوسط"}
+                </span>
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#5c5350]">{t.hero.body}</p>
+
+              <div className="mt-7 flex flex-wrap gap-2.5">
                 {t.hero.bullets.map((item) => (
-                  <div key={item} className="flex items-center gap-2 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium shadow-sm">
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 rounded-xl border border-red-100 bg-white px-3.5 py-2.5 text-sm font-semibold text-[#332b28] shadow-sm"
+                  >
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
                     <span>{item}</span>
                   </div>
@@ -1033,53 +1049,89 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
                   href={EROMMAN_LINKS.sellerSupportWhatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground"
+                  className="rounded-xl bg-primary px-7 py-3.5 text-center text-sm font-bold text-white shadow-xl shadow-primary/20 transition hover:-translate-y-0.5"
                 >
-                  {t.hero.primary}
+                  {t.hero.primary} →
                 </a>
                 <a
                   href="#how-it-works"
-                  className="rounded-full border border-primary/25 px-6 py-3 text-center text-sm font-semibold text-primary"
+                  className="rounded-xl border-2 border-primary/25 bg-white px-7 py-3.5 text-center text-sm font-bold text-primary transition hover:border-primary/50 hover:bg-primary/5"
                 >
                   {t.hero.secondary}
                 </a>
               </div>
 
-              <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{t.hero.marketsLabel}</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {t.markets.map((market) => (
-                  <span key={market} className="rounded-full border border-border bg-card px-3.5 py-1.5 text-sm font-medium">
-                    {market}
-                  </span>
-                ))}
+              <div className="mt-10 grid gap-3 border-t border-red-100 pt-6 sm:grid-cols-4">
+                {[
+                  [Globe2, lang === "en" ? "GCC Market Access" : lang === "bm" ? "Akses Pasaran GCC" : "الوصول إلى الخليج"],
+                  [Languages, lang === "en" ? "Arabic Support" : lang === "bm" ? "Sokongan Arab" : "دعم عربي"],
+                  [PackageCheck, lang === "en" ? "Seller Support" : lang === "bm" ? "Sokongan Penjual" : "دعم البائع"],
+                  [Truck, lang === "en" ? "Cross-Border" : lang === "bm" ? "Rentas Sempadan" : "عبر الحدود"],
+                ].map(([Icon, label]) => {
+                  const HeroIcon = Icon as typeof Globe2
+                  return (
+                    <div key={String(label)} className="flex items-center gap-2 text-xs font-semibold text-[#5c5350]">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/8 text-primary">
+                        <HeroIcon className="h-4 w-4" />
+                      </span>
+                      <span>{label as string}</span>
+                    </div>
+                  )
+                })}
               </div>
             </div>
 
-            <div>
-              <div className="rounded-3xl bg-primary p-6 text-primary-foreground shadow-xl shadow-primary/10 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/70">{t.hero.routeLabel}</p>
-                <p className="mt-2 font-serif text-2xl font-semibold">{t.hero.route}</p>
-                <ol className="mt-6 space-y-3">
-                  {t.process.steps.map((step, i) => (
-                    <li key={step[0]} className="flex items-center gap-3 rounded-xl bg-primary-foreground/10 px-4 py-3">
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-xs font-bold text-primary">
-                        {i + 1}
-                      </span>
-                      <span className="text-sm font-medium">{step[0]}</span>
-                    </li>
-                  ))}
-                </ol>
+            <div className="relative lg:pl-4">
+              <div className="absolute -right-6 -top-6 hidden h-28 w-28 rounded-full border border-accent/50 lg:block" />
+              <div className="absolute -right-10 top-8 hidden h-28 w-28 rounded-full border border-primary/10 lg:block" />
+
+              <div className="relative overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_35px_90px_rgba(91,10,17,0.18)]">
+                <img
+                  src={SITE_BASE_PATH + "/images/gcc-hero.png"}
+                  alt="eRomman GCC market expansion"
+                  width={1200}
+                  height={900}
+                  className="h-[430px] w-full object-cover sm:h-[520px]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#6d0710]/80 via-transparent to-white/5" />
+
+                <div className="absolute left-5 top-5 rounded-xl border border-white/50 bg-white/90 px-4 py-3 shadow-lg backdrop-blur-md">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">eRomman</p>
+                  <p className="mt-1 max-w-[12rem] text-sm font-bold leading-tight text-[#221b19]">
+                    Bridging Brands Beyond Borders
+                  </p>
+                </div>
+
+                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/30 bg-white/95 p-5 shadow-2xl backdrop-blur-xl">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-primary">{t.hero.routeLabel}</p>
+                  <p className="mt-1 text-lg font-black text-[#241c1a] sm:text-xl">{t.hero.route}</p>
+                  <div className="mt-4 grid grid-cols-3 gap-2">
+                    {t.process.steps.slice(0, 3).map((step, i) => (
+                      <div key={step[0]} className="rounded-xl bg-[#fff5f2] px-3 py-2.5">
+                        <span className="text-[10px] font-black text-primary">0{i + 1}</span>
+                        <p className="mt-0.5 text-xs font-bold text-[#3a302d]">{step[0]}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div className="mt-4 rounded-2xl border border-accent/30 bg-accent/10 px-5 py-4">
-                <p className="text-sm font-semibold">{t.hero.noteTitle}</p>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t.hero.note}</p>
+
+              <div className="relative -mt-5 mx-4 rounded-2xl border border-red-100 bg-white px-5 py-4 shadow-xl sm:mx-8">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#7b6f6a]">{t.hero.marketsLabel}</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {t.markets.map((market) => (
+                    <span key={market} className="rounded-full bg-primary/7 px-3 py-1.5 text-xs font-bold text-primary">
+                      {market}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-primary py-16 text-primary-foreground" id="ecosystem">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#9f0712] via-primary to-[#6f0710] py-16 text-primary-foreground" id="ecosystem">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent">{t.stats.eyebrow}</p>
             <h2 className="mt-2 font-serif text-3xl font-semibold">{t.stats.title}</h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-primary-foreground/75">{t.stats.body}</p>
@@ -1104,7 +1156,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section id="how-it-works" className="py-20 lg:py-28">
+        <section id="how-it-works" className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-semibold uppercase tracking-wider text-primary">{t.process.eyebrow}</p>
@@ -1129,7 +1181,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section className="border-y border-border bg-card/45 py-20 lg:py-28">
+        <section className="border-y border-red-100 bg-[#fffaf7] py-20 lg:py-24">
           <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-wider text-primary">{t.ease.eyebrow}</p>
@@ -1163,19 +1215,29 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section id="support" className="py-20 lg:py-28">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary">{t.support.eyebrow}</p>
-            <h2 className="mt-3 max-w-3xl font-serif text-3xl font-semibold sm:text-4xl">{t.support.title}</h2>
-            <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">{t.support.body}</p>
-            <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <section id="support" className="relative overflow-hidden bg-gradient-to-br from-[#a80714] via-primary to-[#790710] py-20 text-white lg:py-24">
+          <div className="pointer-events-none absolute -left-24 top-12 h-72 w-72 rounded-full border border-white/10" />
+          <div className="pointer-events-none absolute -right-24 bottom-8 h-80 w-80 rounded-full border border-accent/20" />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#f3c96d]">{t.support.eyebrow}</p>
+              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">{t.support.title}</h2>
+              <p className="mt-4 text-base leading-relaxed text-white/75 sm:text-lg">{t.support.body}</p>
+            </div>
+
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {t.support.items.map((item, i) => {
                 const Icon = supportIcons[i]
                 return (
-                  <article key={item[0]} className="rounded-2xl border border-border bg-card p-7">
-                    <Icon className="h-6 w-6 text-primary" />
-                    <h3 className="mt-4 font-serif text-xl font-semibold">{item[0]}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item[1]}</p>
+                  <article
+                    key={item[0]}
+                    className="group rounded-2xl border border-white/15 bg-white p-6 text-[#241d1b] shadow-[0_18px_45px_rgba(58,0,5,0.16)] transition hover:-translate-y-1 hover:shadow-2xl"
+                  >
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/8 text-primary transition group-hover:bg-primary group-hover:text-white">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <h3 className="mt-4 text-lg font-black">{item[0]}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#6a5e59]">{item[1]}</p>
                   </article>
                 )
               })}
@@ -1183,32 +1245,58 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section id="marketplaces" className="border-y border-border bg-card/45 py-20 lg:py-28">
-          <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-primary">{t.marketplace.eyebrow}</p>
-              <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">{t.marketplace.title}</h2>
-              <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t.marketplace.body}</p>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.marketplace.disclaimer}</p>
-              <a
-                href={EROMMAN_LINKS.sell}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4"
-              >
-                {t.marketplace.learn}
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {t.marketplace.platforms.map((platform, i) => (
-                <div
-                  key={platform}
-                  className={i === 0 ? "rounded-2xl bg-primary p-5 text-primary-foreground" : "rounded-2xl border border-border bg-card p-5"}
+        <section id="marketplaces" className="bg-[#fffaf7] py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="rounded-[2rem] border border-red-100 bg-white px-5 py-10 shadow-[0_24px_70px_rgba(92,12,18,0.08)] sm:px-8 lg:px-12">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="text-xs font-bold uppercase tracking-[0.28em] text-primary">{t.marketplace.eyebrow}</p>
+                <h2 className="mt-3 text-3xl font-black tracking-tight text-[#1d1715] sm:text-4xl">
+                  {t.marketplace.title}
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-[#6b605c]">{t.marketplace.body}</p>
+              </div>
+
+              <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {t.marketplace.platforms.map((platform, i) => {
+                  const pieces = platform.split(" ")
+                  const brand = platform === "eRomman" ? "eRomman" : pieces[0]
+                  const region = platform === "eRomman" ? (lang === "en" ? "Arabic Marketplace" : lang === "bm" ? "Marketplace Bahasa Arab" : "السوق العربي") : pieces.slice(1).join(" ")
+                  return (
+                    <div
+                      key={platform}
+                      className={
+                        "flex min-h-28 flex-col items-center justify-center rounded-2xl border px-5 py-5 text-center transition hover:-translate-y-1 hover:shadow-lg " +
+                        (i === 0 ? "border-primary bg-primary text-white" : "border-red-100 bg-[#fffdfc] text-[#1f1917]")
+                      }
+                    >
+                      <p
+                        className={
+                          "text-2xl font-black tracking-[-0.04em] " +
+                          (brand.toLowerCase() === "noon" ? "lowercase" : brand.toUpperCase() === "SHEIN" ? "tracking-[0.16em]" : "")
+                        }
+                      >
+                        {brand}
+                      </p>
+                      <p className={"mt-1 text-xs font-bold uppercase tracking-[0.12em] " + (i === 0 ? "text-white/70" : "text-[#8b7f7a]")}>
+                        {region || (lang === "en" ? "Marketplace Opportunity" : lang === "bm" ? "Peluang Marketplace" : "فرصة منصة")}
+                      </p>
+                    </div>
+                  )
+                })}
+              </div>
+
+              <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-[#fff4f0] px-5 py-4 text-center sm:flex-row sm:text-left">
+                <p className="max-w-3xl text-xs leading-relaxed text-[#756862]">{t.marketplace.disclaimer}</p>
+                <a
+                  href={EROMMAN_LINKS.sell}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white"
                 >
-                  <p className="font-serif text-lg font-semibold">{platform}</p>
-                </div>
-              ))}
+                  {t.marketplace.learn}
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -1235,7 +1323,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section id="pricing" className="border-t border-border bg-card/40 py-20 lg:py-28">
+        <section id="pricing" className="border-t border-red-100 bg-[#fff8f3] py-20 lg:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">{t.pricing.eyebrow}</p>
             <h2 className="mt-3 max-w-3xl font-serif text-3xl font-semibold sm:text-4xl">{t.pricing.title}</h2>
@@ -1289,7 +1377,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section id="fees" className="border-t border-border py-20 lg:py-28">
+        <section id="fees" className="border-t border-red-100 bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">{t.fees.eyebrow}</p>
             <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">{t.fees.title}</h2>
@@ -1322,7 +1410,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section id="faq" className="border-t border-border bg-card/45 py-20 lg:py-28">
+        <section id="faq" className="border-t border-red-100 bg-[#fffaf7] py-20 lg:py-24">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">{t.faq.eyebrow}</p>
             <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">{t.faq.title}</h2>
@@ -1337,7 +1425,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section id="contact" className="py-20 lg:py-28">
+        <section id="contact" className="bg-white py-20 lg:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-red-900 text-primary-foreground">
               <div className="grid gap-10 px-6 py-12 sm:px-10 lg:grid-cols-5 lg:px-14 lg:py-16">
@@ -1413,8 +1501,8 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
         </section>
       </main>
 
-      <footer className="border-t border-border bg-card/40">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-10 text-sm text-muted-foreground sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <footer className="border-t border-red-900/30 bg-[#7f0710] text-white">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 text-sm text-white/70 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
             <p>{t.cta.footer}</p>
             <a
