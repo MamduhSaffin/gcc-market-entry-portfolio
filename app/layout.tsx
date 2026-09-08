@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
 const siteUrl = "https://mamduhsaffin.github.io/sell-to-the-middle-east/"
+const socialImage = siteUrl + "og-eromman.png?v=20260908"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | eRomman Seller Guide",
   },
   description:
-    "A simple seller guide for Malaysian brands exploring the Middle East with eRomman: how it works, Arabic support, marketplace opportunities, seller plans, fees, settlement and next steps.",
+    "A trilingual seller guide for Malaysian brands exploring the Middle East with eRomman: English, Bahasa Melayu and Arabic.",
   keywords: [
     "sell to Middle East",
     "eRomman seller guide",
@@ -19,30 +20,42 @@ export const metadata: Metadata = {
     "UAE marketplace",
     "Arabic marketplace",
     "cross-border e-commerce Malaysia",
-    "GCC selling",
   ],
   authors: [{ name: "Muhammad Mamduh Bin Saffin" }],
   creator: "Muhammad Mamduh Bin Saffin",
   alternates: {
     canonical: siteUrl,
+    languages: {
+      en: siteUrl + "en/",
+      ms: siteUrl + "bm/",
+      ar: siteUrl + "ar/",
+    },
   },
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Sell to the Middle East with eRomman",
     description:
-      "See how Malaysian sellers can start small, reach Middle East customers and test demand with eRomman.",
+      "A simple seller guide for Malaysian brands exploring Middle East customers with eRomman.",
     siteName: "eRomman Seller Guide",
+    images: [
+      {
+        url: socialImage,
+        width: 512,
+        height: 512,
+        alt: "eRomman crowned O — Seller Guide",
+      },
+    ],
   },
   twitter: {
     card: "summary",
     title: "Sell to the Middle East with eRomman",
-    description:
-      "A simple guide for Malaysian sellers exploring Middle East customers through eRomman.",
+    description: "A simple trilingual seller guide for Malaysian brands.",
+    images: [socialImage],
   },
   icons: {
-    icon: "https://mamduhsaffin.github.io/sell-to-the-middle-east/icon.svg",
-    apple: "https://mamduhsaffin.github.io/sell-to-the-middle-east/apple-icon.png",
+    icon: siteUrl + "icon.svg?v=20260908",
+    apple: siteUrl + "apple-icon.png",
   },
 }
 

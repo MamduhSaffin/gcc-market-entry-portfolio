@@ -1,29 +1,33 @@
 # Sell to the Middle East with eRomman
 
-A seller-facing microsite prepared by **Muhammad Mamduh Bin Saffin** to make eRomman's Middle East selling model easier for Malaysian brands to understand.
+A trilingual seller-facing microsite prepared by **Muhammad Mamduh Bin Saffin** to make eRomman's Middle East selling model easier for Malaysian brands to understand.
 
-## What this page explains
+## Languages
+
+- English: /en/
+- Bahasa Melayu: /bm/
+- العربية: /ar/
+
+Arabic uses RTL presentation.
+
+## What the site explains
 
 - What eRomman is
 - How the seller process works
-- What changes — and what does not change — for the seller
+- Seller control and brand ownership
 - Arabic localisation, marketing, marketplace and logistics support
 - Marketplace opportunities across the eRomman ecosystem
-- Start → Test → Learn → Validate → Scale market-validation framework
-- September 2026 subscription plans and promotion
+- Start → Test → Learn → Validate → Scale framework
+- September 2026 subscription plans
 - Seller commission, pickup fees and settlement timing
-- Seller FAQ, including returns and payment arrangements
+- Seller FAQ and return-policy overview
 - Direct seller-support contact
 
-## Source materials
+## Social preview
 
-The content is aligned to the seller-facing eRomman materials used in September 2026:
+The site now uses a custom eRomman crowned-O social preview image and favicon instead of the old default preview graphic.
 
-- eRomman Corporate Profile 2.0
-- eRomman Seller Presentation — English — September 2026
-- eRomman Subscription & Seller Charges — September 2026
-
-## Live seller guide
+## Live site
 
 https://mamduhsaffin.github.io/sell-to-the-middle-east/
 
