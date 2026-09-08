@@ -6,7 +6,6 @@ import {
   CheckCircle2,
   ExternalLink,
   Globe2,
-  Linkedin,
   Languages,
   Mail,
   Menu,
@@ -1369,7 +1368,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3 text-sm font-semibold"
                     >
-                      <Linkedin className="h-4 w-4" />
+                      <ExternalLink className="h-4 w-4" />
                       LinkedIn
                     </a>
                   </div>
@@ -1399,7 +1398,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 hover:text-primary"
                     >
-                      <Linkedin className="h-4 w-4 text-primary" />
+                      <ExternalLink className="h-4 w-4 text-primary" />
                       View professional LinkedIn
                     </a>
                     <a href={EROMMAN_LINKS.home} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary">
@@ -1424,7 +1423,7 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
               rel="noopener noreferrer"
               className="mt-2 inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
             >
-              <Linkedin className="h-4 w-4" />
+              <ExternalLink className="h-4 w-4" />
               Connect with Mamduh on LinkedIn
             </a>
           </div>
