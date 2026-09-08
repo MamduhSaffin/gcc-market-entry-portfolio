@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
 const siteUrl = "https://mamduhsaffin.github.io/sell-to-the-middle-east/"
-const socialImage = siteUrl + "og-eromman.png?v=20260908"
+const socialImage = siteUrl + "images/gcc-hero.png"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -41,14 +41,12 @@ export const metadata: Metadata = {
     images: [
       {
         url: socialImage,
-        width: 512,
-        height: 512,
-        alt: "eRomman crowned O — Seller Guide",
+        alt: "Sell to the Middle East with eRomman — Seller Guide",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Sell to the Middle East with eRomman",
     description: "A simple trilingual seller guide for Malaysian brands.",
     images: [socialImage],
