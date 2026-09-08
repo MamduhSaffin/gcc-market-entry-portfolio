@@ -7,8 +7,9 @@ export const EROMMAN_LINKS = {
   contact: "https://www.eromman.com/contact-us/",
   sellerSupportEmail: "mailto:mamduh.sellers@eromman.com",
   sellerSupportPhone: "tel:+60126413812",
+  sellerSupportLinkedIn: "https://www.linkedin.com/in/muhammad-mamduh-eromman",
   sellerSupportWhatsapp:
-    "https://wa.me/60126413812?text=Hi%20Mamduh%2C%20I%27d%20like%20to%20learn%20more%20about%20selling%20in%20the%20GCC%20with%20eRomman.",
+    "https://wa.me/60126413812?text=Hi%20Mamduh%2C%20I%27d%20like%20to%20learn%20more%20about%20selling%20in%20the%20Middle%20East%20with%20eRomman.",
 } as const
 
 export const SELLER_SUPPORT = {
@@ -16,4 +17,5 @@ export const SELLER_SUPPORT = {
   role: "E-commerce Seller Support & Marketing Executive",
   email: "mamduh.sellers@eromman.com",
   phone: "+60 12 641 3812",
+  linkedin: "linkedin.com/in/muhammad-mamduh-eromman",
 } as const

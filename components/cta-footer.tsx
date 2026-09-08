@@ -1,4 +1,4 @@
-import { ExternalLink, Mail, MessageCircle, Phone } from "lucide-react"
+import { ExternalLink, Linkedin, Mail, MessageCircle, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { EROMMAN_LINKS, SELLER_SUPPORT } from "@/lib/links"
 import { SITE_BASE_PATH } from "@/lib/site"
@@ -18,7 +18,8 @@ export function CtaFooter() {
                 <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-primary-foreground/80">
                   Send me your brand or product link. I can help review which products may be suitable to start with and explain the eRomman process clearly before you decide.
                 </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+
+                <div className="mt-8 flex flex-wrap gap-3">
                   <Button
                     nativeButton={false}
                     render={
@@ -30,6 +31,7 @@ export function CtaFooter() {
                     <MessageCircle className="mr-2 h-4 w-4" />
                     WhatsApp Mamduh
                   </Button>
+
                   <Button
                     nativeButton={false}
                     render={<a href={EROMMAN_LINKS.sellerSupportEmail} />}
@@ -38,9 +40,26 @@ export function CtaFooter() {
                     className="rounded-full border-primary-foreground/30 bg-transparent px-6 text-primary-foreground hover:bg-primary-foreground/10"
                   >
                     <Mail className="mr-2 h-4 w-4" />
-                    Email Seller Support
+                    Email
+                  </Button>
+
+                  <Button
+                    nativeButton={false}
+                    render={
+                      <a href={EROMMAN_LINKS.sellerSupportLinkedIn} target="_blank" rel="noopener noreferrer" />
+                    }
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full border-primary-foreground/30 bg-transparent px-6 text-primary-foreground hover:bg-primary-foreground/10"
+                  >
+                    <Linkedin className="mr-2 h-4 w-4" />
+                    LinkedIn
                   </Button>
                 </div>
+
+                <p className="mt-5 max-w-xl text-sm leading-relaxed text-primary-foreground/70">
+                  Prefer to verify who you are speaking with first? You can also view my professional LinkedIn profile before contacting me.
+                </p>
               </div>
 
               <aside className="rounded-2xl bg-white p-6 text-foreground lg:col-span-2">
@@ -51,25 +70,38 @@ export function CtaFooter() {
                   height={238}
                   className="h-8 w-auto"
                 />
+
                 <p className="mt-6 font-serif text-xl font-semibold">{SELLER_SUPPORT.name}</p>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{SELLER_SUPPORT.role}</p>
 
                 <div className="mt-6 space-y-3 text-sm">
                   <a href={EROMMAN_LINKS.sellerSupportEmail} className="flex items-center gap-3 hover:text-primary">
-                    <Mail className="h-4 w-4 text-primary" />
-                    {SELLER_SUPPORT.email}
+                    <Mail className="h-4 w-4 shrink-0 text-primary" />
+                    <span className="break-all">{SELLER_SUPPORT.email}</span>
                   </a>
+
                   <a href={EROMMAN_LINKS.sellerSupportPhone} className="flex items-center gap-3 hover:text-primary">
-                    <Phone className="h-4 w-4 text-primary" />
+                    <Phone className="h-4 w-4 shrink-0 text-primary" />
                     {SELLER_SUPPORT.phone}
                   </a>
+
+                  <a
+                    href={EROMMAN_LINKS.sellerSupportLinkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-primary"
+                  >
+                    <Linkedin className="h-4 w-4 shrink-0 text-primary" />
+                    <span>View professional LinkedIn</span>
+                  </a>
+
                   <a
                     href={EROMMAN_LINKS.home}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-primary"
                   >
-                    <ExternalLink className="h-4 w-4 text-primary" />
+                    <ExternalLink className="h-4 w-4 shrink-0 text-primary" />
                     www.eromman.com
                   </a>
                 </div>
@@ -81,7 +113,19 @@ export function CtaFooter() {
 
       <footer className="border-t border-border bg-card/40">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted-foreground sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <p>Seller guide prepared by Muhammad Mamduh Bin Saffin.</p>
+          <div>
+            <p>Seller guide prepared by Muhammad Mamduh Bin Saffin.</p>
+            <a
+              href={EROMMAN_LINKS.sellerSupportLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
+            >
+              <Linkedin className="h-4 w-4" />
+              Connect with Mamduh on LinkedIn
+            </a>
+          </div>
+
           <p className="max-w-2xl lg:text-right">
             For official eRomman corporate information, policies and registration, visit{" "}
             <a
