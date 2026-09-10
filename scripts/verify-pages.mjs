@@ -7,7 +7,8 @@ import { setTimeout as delay } from "node:timers/promises"
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex")
 const routes = ["", "en/", "bm/", "ar/"]
 const headlines = ["YOUR GATEWAY TO", "YOUR GATEWAY TO", "PINTU MASUK ANDA KE", "بوابتك إلى"]
-const sections = ["seller-success-stories", "how-it-works", "support", "marketplaces", "pricing", "fees", "faq", "contact"]
+const sections = ["company-profile-video", "seller-success-stories", "how-it-works", "support", "marketplaces", "pricing", "fees", "faq", "contact"]
+const requiredVideoIds = ["SNpyhzCsYHs", "a-ak5h5d3jo", "I7GU3g0i7Bg"]
 
 export async function stamp(directory, commit, basePath) {
   assert.match(commit, /^[0-9a-f]{40}$/, "A full source commit SHA is required")
@@ -25,6 +26,7 @@ export async function stamp(directory, commit, basePath) {
     const html = await record(route + "index.html", route)
     assert.ok(html.includes(headlines[index]), "Redesign missing from " + (route || "/"))
     for (const id of sections) assert.ok(html.includes('id="' + id + '"'), "Missing seller section: " + id)
+    for (const videoId of requiredVideoIds) assert.ok(html.includes(videoId), "Missing required video: " + videoId)
     for (const language of routes.slice(1)) {
       assert.ok(html.includes(basePath + "/" + language), "Missing language route: " + language)
     }
@@ -43,7 +45,7 @@ export async function stamp(directory, commit, basePath) {
   const manifest = { commit, basePath, files: [...files.values()] }
   await writeFile(resolve(root, "deployment.json"), JSON.stringify(manifest, null, 2) + "\n")
   await writeFile(resolve(root, ".nojekyll"), "")
-  console.log("Validated all language routes and " + files.size + " exported pages/assets for " + commit)
+  console.log("Validated all language routes, video sections and " + files.size + " exported pages/assets for " + commit)
   return manifest
 }
 
@@ -72,7 +74,7 @@ export async function verify(siteUrl, commit) {
       assert.equal(digest(await get(url)), file.sha256, "Stale or incorrect published file: " + url.href)
     }))
   }
-  console.log("LIVE VERIFIED: " + commit + " at " + base.href + " — all 4 routes and " + manifest.files.length + " pages/assets match the build.")
+  console.log("LIVE VERIFIED: " + commit + " at " + base.href + " — all routes, video sections and " + manifest.files.length + " pages/assets match the build.")
 }
 
 if (process.argv[2] === "stamp") {
