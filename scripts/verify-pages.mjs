@@ -7,7 +7,7 @@ import { setTimeout as delay } from "node:timers/promises"
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex")
 const routes = ["", "en/", "bm/", "ar/"]
 const headlines = ["YOUR GATEWAY TO", "YOUR GATEWAY TO", "PINTU MASUK ANDA KE", "بوابتك إلى"]
-const sections = ["how-it-works", "support", "marketplaces", "pricing", "fees", "faq", "contact"]
+const sections = ["seller-success-stories", "how-it-works", "support", "marketplaces", "pricing", "fees", "faq", "contact"]
 
 export async function stamp(directory, commit, basePath) {
   assert.match(commit, /^[0-9a-f]{40}$/, "A full source commit SHA is required")
@@ -65,7 +65,6 @@ export async function verify(siteUrl, commit) {
   assert.equal(manifest.commit, commit, "Pages is serving another release")
   assert.equal(base.pathname, manifest.basePath + "/", "Deployment URL has the wrong base path")
   for (const route of routes) assert.ok(manifest.files.some((file) => file.path === route), "Missing route " + route)
-  // Check the normal public URLs, without cache-busting queries on HTML.
   for (let offset = 0; offset < manifest.files.length; offset += 6) {
     await Promise.all(manifest.files.slice(offset, offset + 6).map(async (file) => {
       const url = new URL(file.path, base)
