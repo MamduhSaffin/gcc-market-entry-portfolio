@@ -38,6 +38,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Add company profile and seller success videos to the seller guide
+        run: node scripts/inject-video-sections.mjs
+
       - name: Build static export
         run: pnpm build
 
