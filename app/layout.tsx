@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
-const siteUrl = "https://mamduhsaffin.github.io/sell-to-the-middle-east/"
+const siteUrl = "https://gccmarketentry.me/"
 const socialImage = siteUrl + "images/gcc-hero.png"
 
 export const metadata: Metadata = {
