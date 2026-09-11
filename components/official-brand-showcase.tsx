@@ -12,12 +12,7 @@ const copy = {
     body: "A clearer view of how eRomman positions Malaysian brands for GCC visibility, consumer engagement, market validation and structured expansion.",
     visualTitle: "GCC market-entry toolkit",
     visualBody: "Official campaign and business-development materials used to explain the eRomman approach to Malaysian brands.",
-    metrics: [
-      ["1,300+", "Sellers"],
-      ["250,000+", "SKUs"],
-      ["9M+", "Campaign views"],
-      ["4", "Regional locations"],
-    ],
+    metrics: [["1,300+", "Sellers"], ["250,000+", "SKUs"], ["9M+", "Campaign views"], ["4", "Regional locations"]],
     pillars: [
       ["Visibility", "Build marketplace presence and product discoverability."],
       ["Engagement", "Use Arabic content, campaigns and trusted voices to reach GCC consumers."],
@@ -165,7 +160,7 @@ export function OfficialBrandShowcase() {
 
           <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {t.pillars.map(([title, body], index) => {
-              const Icon = icons[index]
+              const Icon = icons[index] ?? Globe2
               return (
                 <div key={title} className="rounded-2xl border border-red-100 bg-[#fffaf7] p-5">
                   <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary text-white"><Icon className="h-4 w-4" /></span>
