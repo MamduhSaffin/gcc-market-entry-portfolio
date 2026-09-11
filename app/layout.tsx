@@ -5,7 +5,7 @@ import { EROMMAN_LINKS, SELLER_SUPPORT } from "@/lib/links"
 import { SITE_URL } from "@/lib/site"
 
 const siteUrl = `${SITE_URL}/`
-const socialImage = siteUrl + "images/gcc-hero.png"
+const socialImage = siteUrl + "images/gcc-market-entry-social.jpg?v=20260912-1"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -52,24 +52,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "GCC Market Entry — Malaysian Brands to Saudi Arabia, UAE & the Middle East",
+    title: "GCC Market Entry — Bridging Malaysian Brands to the Middle East",
     description:
-      "Start small, validate demand and explore Saudi Arabia, UAE and the wider GCC through a structured seller pathway with eRomman.",
+      "Explore a practical pathway into Saudi Arabia, UAE and the wider GCC with eRomman: market access, localisation, fulfilment support and marketplace opportunities.",
     siteName: "GCC Market Entry",
     locale: "en_MY",
     images: [
       {
         url: socialImage,
-        width: 1200,
-        height: 630,
-        alt: "GCC Market Entry — Malaysian Brands to the Middle East",
+        width: 400,
+        height: 210,
+        alt: "eRomman GCC Market Entry — Bridging Malaysian Brands to Millions in the Middle East",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GCC Market Entry — Malaysian Brands to the Middle East",
-    description: "Practical GCC market-entry guidance for Malaysian brands exploring Saudi Arabia and UAE.",
+    title: "GCC Market Entry — Bridging Malaysian Brands to the Middle East",
+    description: "Market access, localisation, fulfilment support and marketplace opportunities across Saudi Arabia, UAE and the wider GCC.",
     images: [socialImage],
   },
   icons: {
