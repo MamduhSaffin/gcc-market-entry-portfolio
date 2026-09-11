@@ -101,7 +101,7 @@ export function OfficialBrandShowcase() {
   const icons = [Globe2, Users, BarChart3, ArrowUpRight]
 
   return createPortal(
-    <section id="official-eromman-materials" dir={rtl ? "rtl" : "ltr"} className="border-t border-red-100 bg-[#fff9f5] py-20 lg:py-24">
+    <section id="official-eromman-materials" dir={rtl ? "rtl" : "ltr"} className="border-t border-red-100 bg-[linear-gradient(180deg,#fffaf7_0%,#fff_46%,#fff8f4_100%)] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
           <div>
@@ -121,80 +121,85 @@ export function OfficialBrandShowcase() {
           </div>
         </div>
 
-        <div className="mt-14 grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr]">
-          <div className="lg:pr-4">
-            <span className="inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-primary shadow-sm">
-              <Megaphone className="h-4 w-4" />
-              {t.discoveryEyebrow}
-            </span>
-            <h3 className="mt-5 text-3xl font-black tracking-tight text-[#211916] sm:text-4xl">{t.discoveryTitle}</h3>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">{t.discoveryBody}</p>
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              {t.pillars.map(([title, body], index) => {
-                const Icon = icons[index] ?? Globe2
-                return (
-                  <div key={title} className="rounded-2xl border border-red-100 bg-white p-4 shadow-sm">
-                    <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-white"><Icon className="h-4 w-4" /></span>
-                    <h4 className="mt-3 text-sm font-black text-[#2c221f]">{title}</h4>
-                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{body}</p>
-                  </div>
-                )
-              })}
+        <article className="mt-14 overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_28px_75px_rgba(92,12,18,0.10)]">
+          <div className="grid lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
+            <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-red-100 bg-[#fff8f4] px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-primary">
+                <Megaphone className="h-4 w-4" />
+                {t.discoveryEyebrow}
+              </span>
+              <h3 className="mt-5 text-3xl font-black tracking-tight text-[#211916] sm:text-4xl">{t.discoveryTitle}</h3>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">{t.discoveryBody}</p>
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {t.pillars.map(([title, body], index) => {
+                  const Icon = icons[index] ?? Globe2
+                  return (
+                    <div key={title} className="rounded-2xl border border-red-100 bg-[#fffdfb] p-4">
+                      <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-white"><Icon className="h-4 w-4" /></span>
+                      <h4 className="mt-3 text-sm font-black text-[#2c221f]">{title}</h4>
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{body}</p>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            <div className="flex items-center bg-[#fff8f4] p-3 sm:p-5 lg:p-6">
+              <div className="w-full overflow-hidden rounded-[1.4rem] border border-red-100 bg-white shadow-sm">
+                <img
+                  src={asset("eromman-consumer-discovery.svg")}
+                  alt="How GCC consumers discover products through Arabic content, KOL engagement and paid digital discovery"
+                  className="block h-auto w-full object-contain"
+                  decoding="async"
+                  fetchPriority="high"
+                />
+              </div>
             </div>
           </div>
+        </article>
 
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white p-3 shadow-[0_30px_80px_rgba(92,12,18,0.12)] sm:p-4">
-            <div className="overflow-hidden rounded-[1.45rem] bg-[#fffdfb]">
-              <img
-                src={asset("eromman-consumer-discovery.webp")}
-                alt="How GCC consumers discover products through Arabic content, KOL engagement and paid digital discovery"
-                className="block h-auto w-full object-contain"
-                decoding="async"
-              />
-            </div>
-          </article>
-        </div>
-
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_24px_65px_rgba(92,12,18,0.09)]">
-            <div className="bg-gradient-to-r from-[#8b0a13] to-[#b5121b] px-6 py-5 text-white sm:px-7">
+        <div className="mt-8 grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
+          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_22px_60px_rgba(92,12,18,0.08)]">
+            <div className="bg-gradient-to-r from-[#850a12] to-[#b5121b] px-6 py-5 text-white">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-black uppercase tracking-[0.16em] text-[#f2cf7b]">{t.buntingTitle}</p>
-                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/80">{t.buntingBody}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-white/80">{t.buntingBody}</p>
                 </div>
-                <span className="hidden h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/12 text-white sm:grid"><Store className="h-5 w-5" /></span>
+                <span className="hidden h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/10 text-white sm:grid"><Store className="h-5 w-5" /></span>
               </div>
             </div>
-            <div className="flex min-h-[520px] items-center justify-center bg-[#f7f1ed] p-5 sm:p-7">
+            <div className="flex items-center justify-center bg-[#f7f1ed] p-5 sm:p-7">
               <img
                 loading="lazy"
                 decoding="async"
-                src={asset("eromman-bunting-red.webp")}
+                src={asset("eromman-bunting.svg")}
                 alt="eRomman GCC market entry bunting"
-                className="block max-h-[760px] w-auto max-w-full rounded-xl object-contain shadow-2xl"
+                className="block max-h-[760px] w-auto max-w-full rounded-xl object-contain shadow-[0_18px_45px_rgba(56,18,18,0.18)]"
               />
             </div>
           </article>
 
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_24px_65px_rgba(92,12,18,0.09)]">
-            <div className="bg-gradient-to-r from-[#8b0a13] to-[#b5121b] px-6 py-5 text-white sm:px-7">
+          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_22px_60px_rgba(92,12,18,0.08)]">
+            <div className="bg-gradient-to-r from-[#850a12] to-[#b5121b] px-6 py-5 text-white">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-black uppercase tracking-[0.16em] text-[#f2cf7b]">{t.brochureTitle}</p>
-                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/80">{t.brochureBody}</p>
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/80">{t.brochureBody}</p>
                 </div>
-                <span className="hidden h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/12 text-white sm:grid"><Globe2 className="h-5 w-5" /></span>
+                <span className="hidden h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/10 text-white sm:grid"><Globe2 className="h-5 w-5" /></span>
               </div>
             </div>
-            <div className="flex min-h-[520px] items-center justify-center bg-[#fffdfb] p-5 sm:p-7">
-              <img
-                loading="lazy"
-                decoding="async"
-                src={asset("eromman-premium-brochure.webp")}
-                alt="eRomman Middle East marketplace and seller support brochure"
-                className="block h-auto w-full max-w-full rounded-xl object-contain"
-              />
+            <div className="bg-[#fffdfb] p-4 sm:p-6">
+              <div className="overflow-hidden rounded-[1.35rem] border border-red-100 bg-white">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={asset("eromman-brochure.svg")}
+                  alt="eRomman Middle East marketplace and seller support brochure"
+                  className="block h-auto w-full object-contain"
+                />
+              </div>
             </div>
           </article>
         </div>
