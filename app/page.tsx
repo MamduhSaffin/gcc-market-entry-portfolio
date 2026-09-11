@@ -1,5 +1,5 @@
-import { TrilingualSellerGuide } from "@/components/trilingual-seller-guide"
+import { GccMarketEntryGuide } from "@/components/gcc-market-entry-guide"
 
 export default function Page() {
-  return <TrilingualSellerGuide lang="en" />
+  return <GccMarketEntryGuide lang="en" />
 }
