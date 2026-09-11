@@ -1,12 +1,12 @@
 import type { Metadata } from "next"
-import { TrilingualSellerGuide } from "@/components/trilingual-seller-guide"
+import { GccMarketEntryGuide } from "@/components/gcc-market-entry-guide"
 
 export const metadata: Metadata = {
-  title: "Jual ke Timur Tengah bersama eRomman | Panduan Penjual",
-  description: "Panduan mudah untuk penjual Malaysia yang ingin meneroka pasaran Timur Tengah bersama eRomman.",
+  title: "GCC Market Entry | Jenama Malaysia ke Timur Tengah",
+  description: "Panduan praktikal kemasukan pasaran GCC untuk jenama Malaysia yang ingin meneroka Arab Saudi, UAE dan Timur Tengah bersama eRomman.",
   alternates: { canonical: "https://mamduhsaffin.github.io/sell-to-the-middle-east/bm/" },
 }
 
 export default function Page() {
-  return <TrilingualSellerGuide lang="bm" />
+  return <GccMarketEntryGuide lang="bm" />
 }

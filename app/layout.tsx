@@ -7,12 +7,13 @@ const socialImage = siteUrl + "images/gcc-hero.png"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Sell to the Middle East with eRomman | Seller Guide",
-    template: "%s | eRomman Seller Guide",
+    default: "GCC Market Entry | Malaysian Brands to the Middle East",
+    template: "%s | GCC Market Entry",
   },
   description:
-    "A trilingual seller guide for Malaysian brands exploring the Middle East with eRomman: English, Bahasa Melayu and Arabic.",
+    "A practical trilingual GCC market-entry portal for Malaysian brands exploring Saudi Arabia, UAE and the wider Middle East with eRomman.",
   keywords: [
+    "GCC market entry",
     "sell to Middle East",
     "eRomman seller guide",
     "Malaysia Middle East e-commerce",
@@ -34,25 +35,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Sell to the Middle East with eRomman",
+    title: "GCC Market Entry — Malaysian Brands to the Middle East",
     description:
-      "A simple seller guide for Malaysian brands exploring Middle East customers with eRomman.",
-    siteName: "eRomman Seller Guide",
+      "Start small, validate demand and explore Saudi Arabia, UAE and the wider GCC through a structured seller pathway with eRomman.",
+    siteName: "GCC Market Entry",
     images: [
       {
         url: socialImage,
-        alt: "Sell to the Middle East with eRomman — Seller Guide",
+        alt: "GCC Market Entry — Malaysian Brands to the Middle East",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sell to the Middle East with eRomman",
-    description: "A simple trilingual seller guide for Malaysian brands.",
+    title: "GCC Market Entry — Malaysian Brands to the Middle East",
+    description: "A practical trilingual GCC market-entry portal for Malaysian brands.",
     images: [socialImage],
   },
   icons: {
-    icon: siteUrl + "icon.svg?v=20260908",
+    icon: siteUrl + "icon.svg?v=20260912",
     apple: siteUrl + "apple-icon.png",
   },
 }
