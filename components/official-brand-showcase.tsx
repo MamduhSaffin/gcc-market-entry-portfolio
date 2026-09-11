@@ -21,9 +21,13 @@ const copy = {
     ],
     presence: "Regional presence: Malaysia (Kuala Lumpur), Saudi Arabia (Jeddah), UAE (Dubai) and Indonesia (Jakarta).",
     note: "Figures and operating details reflect the eRomman GCC booklet supplied for this website and may change over time.",
-    card1: "Your gateway to the Middle East",
-    card2: "GCC consumer discovery",
-    card3: "Seller and marketplace ecosystem",
+    discoveryEyebrow: "Consumer discovery & digital marketing",
+    discoveryTitle: "How GCC consumers discover your products",
+    discoveryBody: "Arabic content, KOL and consumer engagement, paid digital discovery, market insight and demand validation work together to build visibility, trust and measurable market traction across the GCC.",
+    buntingTitle: "Official GCC Seller Bunting",
+    buntingBody: "A concise seller-facing overview of GCC access, Arabic support, fulfilment and marketplace expansion.",
+    brochureTitle: "eRomman GCC Expansion Overview",
+    brochureBody: "A visual overview of eRomman’s seller support, target markets, marketplace pathways and cross-border proposition.",
   },
   bm: {
     eyebrow: "Bahan rasmi pertumbuhan GCC eRomman",
@@ -40,9 +44,13 @@ const copy = {
     ],
     presence: "Kehadiran serantau: Malaysia (Kuala Lumpur), Arab Saudi (Jeddah), UAE (Dubai) dan Indonesia (Jakarta).",
     note: "Angka dan butiran operasi merujuk kepada GCC booklet eRomman yang dibekalkan untuk laman ini dan boleh berubah dari semasa ke semasa.",
-    card1: "Gerbang anda ke Timur Tengah",
-    card2: "Bagaimana pengguna GCC menemui produk",
-    card3: "Ekosistem seller dan marketplace",
+    discoveryEyebrow: "Consumer discovery & digital marketing",
+    discoveryTitle: "Bagaimana pengguna GCC menemui produk anda",
+    discoveryBody: "Kandungan Arab, KOL dan engagement pengguna, paid digital discovery, market insight dan demand validation bekerja bersama untuk membina visibility, kepercayaan dan traction pasaran di GCC.",
+    buntingTitle: "Bunting Rasmi Seller GCC",
+    buntingBody: "Ringkasan visual untuk seller tentang akses GCC, sokongan Arab, fulfilment dan pengembangan marketplace.",
+    brochureTitle: "Ringkasan Pengembangan GCC eRomman",
+    brochureBody: "Gambaran visual tentang seller support, pasaran sasaran, laluan marketplace dan cadangan cross-border eRomman.",
   },
   ar: {
     eyebrow: "مواد eRomman الرسمية للنمو في الخليج",
@@ -59,9 +67,13 @@ const copy = {
     ],
     presence: "الحضور الإقليمي: ماليزيا (كوالالمبور)، السعودية (جدة)، الإمارات (دبي)، وإندونيسيا (جاكرتا).",
     note: "الأرقام والتفاصيل التشغيلية مأخوذة من كتيب eRomman الخليجي المرفق لهذا الموقع وقد تتغير بمرور الوقت.",
-    card1: "بوابتك إلى الشرق الأوسط",
-    card2: "كيف يكتشف مستهلكو الخليج المنتجات",
-    card3: "منظومة البائع والمنصات",
+    discoveryEyebrow: "اكتشاف المستهلك والتسويق الرقمي",
+    discoveryTitle: "كيف يكتشف مستهلكو الخليج منتجاتك",
+    discoveryBody: "يعمل المحتوى العربي والتفاعل مع المؤثرين والمستهلكين والوصول الرقمي المدفوع ورؤى السوق والتحقق من الطلب معاً لبناء الظهور والثقة وقياس الاستجابة في أسواق الخليج.",
+    buntingTitle: "البنر الرسمي لبائعي الخليج",
+    buntingBody: "ملخص بصري يوضح الوصول إلى الخليج والدعم العربي وخدمات التنفيذ والتوسع عبر المنصات.",
+    brochureTitle: "نظرة عامة على توسع eRomman في الخليج",
+    brochureBody: "عرض بصري لدعم البائعين والأسواق المستهدفة ومسارات المنصات والقيمة المقترحة للتجارة عبر الحدود.",
   },
 } as const
 
@@ -109,44 +121,82 @@ export function OfficialBrandShowcase() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_28px_70px_rgba(92,12,18,0.10)]">
-            <div className="bg-[#850a12] px-6 py-5 text-white">
-              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#f0c66a]">{t.card1}</p>
-              <p className="mt-2 text-sm leading-relaxed text-white/75">Arabic marketplace · GCC market access · fulfilment support · marketplace expansion</p>
+        <div className="mt-14 grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+          <div className="lg:pr-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-primary shadow-sm">
+              <Megaphone className="h-4 w-4" />
+              {t.discoveryEyebrow}
+            </span>
+            <h3 className="mt-5 text-3xl font-black tracking-tight text-[#211916] sm:text-4xl">{t.discoveryTitle}</h3>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">{t.discoveryBody}</p>
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              {t.pillars.map(([title, body], index) => {
+                const Icon = icons[index] ?? Globe2
+                return (
+                  <div key={title} className="rounded-2xl border border-red-100 bg-white p-4 shadow-sm">
+                    <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-white"><Icon className="h-4 w-4" /></span>
+                    <h4 className="mt-3 text-sm font-black text-[#2c221f]">{title}</h4>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{body}</p>
+                  </div>
+                )
+              })}
             </div>
-            <div className="bg-[#f5eee9] p-4 sm:p-6">
-              <img loading="lazy" src={asset("eromman-bunting-red.webp")} alt="eRomman GCC market entry bunting" className="mx-auto max-h-[760px] w-auto rounded-xl object-contain shadow-2xl" />
+          </div>
+
+          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white p-3 shadow-[0_30px_80px_rgba(92,12,18,0.12)] sm:p-4">
+            <div className="overflow-hidden rounded-[1.45rem] bg-[#fffdfb]">
+              <img
+                src={asset("eromman-consumer-discovery.webp")}
+                alt="How GCC consumers discover products through Arabic content, KOL engagement and paid digital discovery"
+                className="block h-auto w-full object-contain"
+                decoding="async"
+              />
+            </div>
+          </article>
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_24px_65px_rgba(92,12,18,0.09)]">
+            <div className="bg-gradient-to-r from-[#8b0a13] to-[#b5121b] px-6 py-5 text-white sm:px-7">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.16em] text-[#f2cf7b]">{t.buntingTitle}</p>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/80">{t.buntingBody}</p>
+                </div>
+                <span className="hidden h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/12 text-white sm:grid"><Store className="h-5 w-5" /></span>
+              </div>
+            </div>
+            <div className="flex min-h-[520px] items-center justify-center bg-[#f7f1ed] p-5 sm:p-7">
+              <img
+                loading="lazy"
+                decoding="async"
+                src={asset("eromman-bunting-red.webp")}
+                alt="eRomman GCC market entry bunting"
+                className="block max-h-[760px] w-auto max-w-full rounded-xl object-contain shadow-2xl"
+              />
             </div>
           </article>
 
-          <div className="grid gap-6">
-            <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_28px_70px_rgba(92,12,18,0.08)]">
-              <div className="p-5 sm:p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-[0.16em] text-primary">{t.card2}</p>
-                    <h3 className="mt-2 text-xl font-black text-[#251b18] sm:text-2xl">Arabic content, trusted voices, paid reach and market insight</h3>
-                  </div>
-                  <span className="hidden h-12 w-12 place-items-center rounded-xl bg-primary text-white sm:grid"><Megaphone className="h-5 w-5" /></span>
+          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_24px_65px_rgba(92,12,18,0.09)]">
+            <div className="bg-gradient-to-r from-[#8b0a13] to-[#b5121b] px-6 py-5 text-white sm:px-7">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.16em] text-[#f2cf7b]">{t.brochureTitle}</p>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/80">{t.brochureBody}</p>
                 </div>
+                <span className="hidden h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/12 text-white sm:grid"><Globe2 className="h-5 w-5" /></span>
               </div>
-              <img loading="lazy" src={asset("eromman-consumer-discovery.webp")} alt="How GCC consumers discover products through Arabic content, KOL engagement and paid digital discovery" className="w-full border-t border-red-100 object-cover" />
-            </article>
-
-            <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_28px_70px_rgba(92,12,18,0.08)]">
-              <div className="p-5 sm:p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-[0.16em] text-primary">{t.card3}</p>
-                    <h3 className="mt-2 text-xl font-black text-[#251b18] sm:text-2xl">Sell to the Middle East with localisation, marketing and fulfilment support</h3>
-                  </div>
-                  <span className="hidden h-12 w-12 place-items-center rounded-xl bg-primary text-white sm:grid"><Store className="h-5 w-5" /></span>
-                </div>
-              </div>
-              <img loading="lazy" src={asset("eromman-premium-brochure.webp")} alt="eRomman Middle East marketplace and seller support brochure" className="w-full border-t border-red-100 object-cover" />
-            </article>
-          </div>
+            </div>
+            <div className="flex min-h-[520px] items-center justify-center bg-[#fffdfb] p-5 sm:p-7">
+              <img
+                loading="lazy"
+                decoding="async"
+                src={asset("eromman-premium-brochure.webp")}
+                alt="eRomman Middle East marketplace and seller support brochure"
+                className="block h-auto w-full max-w-full rounded-xl object-contain"
+              />
+            </div>
+          </article>
         </div>
 
         <div className="mt-10 rounded-[2rem] border border-red-100 bg-white p-6 shadow-sm sm:p-8">
@@ -156,19 +206,6 @@ export function OfficialBrandShowcase() {
               <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">{t.visualBody}</p>
             </div>
             <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground"><ShieldCheck className="h-4 w-4 text-primary" />{t.note}</div>
-          </div>
-
-          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {t.pillars.map(([title, body], index) => {
-              const Icon = icons[index] ?? Globe2
-              return (
-                <div key={title} className="rounded-2xl border border-red-100 bg-[#fffaf7] p-5">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary text-white"><Icon className="h-4 w-4" /></span>
-                  <h3 className="mt-4 text-lg font-black text-[#2c221f]">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
-                </div>
-              )
-            })}
           </div>
 
           <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-[#820910] p-5 text-white sm:flex-row sm:items-center sm:justify-between">
