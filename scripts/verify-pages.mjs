@@ -6,8 +6,8 @@ import { setTimeout as delay } from "node:timers/promises"
 
 const digest = (bytes) => createHash("sha256").update(bytes).digest("hex")
 const routes = ["", "en/", "bm/", "ar/"]
-const headlines = ["YOUR GATEWAY TO", "YOUR GATEWAY TO", "PINTU MASUK ANDA KE", "بوابتك إلى"]
-const sections = ["company-profile-video", "seller-success-stories", "how-it-works", "support", "marketplaces", "pricing", "fees", "faq", "contact"]
+const headlines = ["Expand Your Brand", "Expand Your Brand", "Kembangkan Jenama Anda", "وسّع علامتك التجارية"]
+const sections = ["fit-check", "opportunities", "how-it-works", "marketplaces", "company-profile-video", "seller-success-stories", "pricing", "cost-estimator", "faq", "contact"]
 const requiredVideoIds = ["SNpyhzCsYHs", "a-ak5h5d3jo", "I7GU3g0i7Bg"]
 
 export async function stamp(directory, commit, basePath) {
@@ -24,7 +24,7 @@ export async function stamp(directory, commit, basePath) {
   }
   for (const [index, route] of routes.entries()) {
     const html = await record(route + "index.html", route)
-    assert.ok(html.includes(headlines[index]), "Redesign missing from " + (route || "/"))
+    assert.ok(html.includes(headlines[index]), "GCC Market Entry redesign missing from " + (route || "/"))
     for (const id of sections) assert.ok(html.includes('id="' + id + '"'), "Missing seller section: " + id)
     for (const videoId of requiredVideoIds) assert.ok(html.includes(videoId), "Missing required video: " + videoId)
     for (const language of routes.slice(1)) {
@@ -45,7 +45,7 @@ export async function stamp(directory, commit, basePath) {
   const manifest = { commit, basePath, files: [...files.values()] }
   await writeFile(resolve(root, "deployment.json"), JSON.stringify(manifest, null, 2) + "\n")
   await writeFile(resolve(root, ".nojekyll"), "")
-  console.log("Validated all language routes, video sections and " + files.size + " exported pages/assets for " + commit)
+  console.log("Validated all GCC Market Entry language routes, video sections and " + files.size + " exported pages/assets for " + commit)
   return manifest
 }
 
