@@ -1,0 +1,1 @@
+Official eRomman website visual assets are referenced by the GCC Market Entry showcase component. Binary media is intentionally loaded from the existing website image set until final asset synchronization.
