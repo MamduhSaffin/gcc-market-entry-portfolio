@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { Analytics } from "@/components/analytics"
+import { OfficialBrandShowcase } from "@/components/official-brand-showcase"
 import { EROMMAN_LINKS, SELLER_SUPPORT } from "@/lib/links"
 import { SITE_URL } from "@/lib/site"
 
@@ -52,24 +53,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "GCC Market Entry — Bridging Malaysian Brands to the Middle East",
+    title: "GCC Market Entry — Malaysian Brands to Saudi Arabia, UAE & the Middle East",
     description:
-      "Explore a practical pathway into Saudi Arabia, UAE and the wider GCC with eRomman: market access, localisation, fulfilment support and marketplace opportunities.",
+      "Start small, validate demand and explore Saudi Arabia, UAE and the wider GCC through a structured seller pathway with eRomman.",
     siteName: "GCC Market Entry",
     locale: "en_MY",
     images: [
       {
         url: socialImage,
-        width: 400,
-        height: 210,
-        alt: "eRomman GCC Market Entry — Bridging Malaysian Brands to Millions in the Middle East",
+        width: 1200,
+        height: 630,
+        alt: "GCC Market Entry — Malaysian Brands to the Middle East",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GCC Market Entry — Bridging Malaysian Brands to the Middle East",
-    description: "Market access, localisation, fulfilment support and marketplace opportunities across Saudi Arabia, UAE and the wider GCC.",
+    title: "GCC Market Entry — Malaysian Brands to the Middle East",
+    description: "Practical GCC market-entry guidance for Malaysian brands exploring Saudi Arabia and UAE.",
     images: [socialImage],
   },
   icons: {
@@ -118,6 +119,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema).replace(/</g, "\\u003c") }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema).replace(/</g, "\\u003c") }} />
         {children}
+        <OfficialBrandShowcase />
         <Analytics />
       </body>
     </html>
