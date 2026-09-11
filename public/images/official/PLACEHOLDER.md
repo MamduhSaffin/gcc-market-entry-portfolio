@@ -1,0 +1,1 @@
+Official asset files are being synchronized for the website showcase.
