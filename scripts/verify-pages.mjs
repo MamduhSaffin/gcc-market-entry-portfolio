@@ -12,7 +12,7 @@ const requiredVideoIds = ["SNpyhzCsYHs", "a-ak5h5d3jo", "I7GU3g0i7Bg"]
 
 export async function stamp(directory, commit, basePath) {
   assert.match(commit, /^[0-9a-f]{40}$/, "A full source commit SHA is required")
-  assert.equal(basePath, "/sell-to-the-middle-east", "Unexpected GitHub Pages base path")
+  assert.equal(basePath, "", "Custom-domain deployment must use the site root")
   const root = resolve(directory)
   const files = new Map()
   async function record(path, url) {
@@ -28,24 +28,24 @@ export async function stamp(directory, commit, basePath) {
     for (const id of sections) assert.ok(html.includes('id="' + id + '"'), "Missing seller section: " + id)
     for (const videoId of requiredVideoIds) assert.ok(html.includes(videoId), "Missing required video: " + videoId)
     for (const language of routes.slice(1)) {
-      assert.ok(html.includes(basePath + "/" + language), "Missing language route: " + language)
+      assert.ok(html.includes("/" + language), "Missing language route: " + language)
     }
     if (route === "ar/") assert.ok(html.includes('dir="rtl"'), "Arabic RTL missing")
-    assert.ok(html.includes(basePath + "/_next/static/"), "Compiled assets missing")
+    assert.ok(html.includes("/_next/static/"), "Compiled assets missing")
     for (const tag of html.match(/<(?:script|link|img)\b[^>]*>/g) || []) {
       const match = tag.match(/(?:src|href)="([^"]+)"/)
       if (!match) continue
       const asset = match[1].replaceAll("&amp;", "&")
       if (/^(?:https?:|data:|\/\/)/.test(asset)) continue
-      assert.ok(asset.startsWith(basePath + "/"), "Asset has wrong base path: " + asset)
-      const path = decodeURIComponent(asset.split(/[?#]/)[0].slice(basePath.length + 1))
-      await record(path, asset.slice(basePath.length + 1))
+      assert.ok(asset.startsWith("/"), "Asset has wrong root path: " + asset)
+      const path = decodeURIComponent(asset.split(/[?#]/)[0].slice(1))
+      await record(path, asset.slice(1))
     }
   }
   const manifest = { commit, basePath, files: [...files.values()] }
   await writeFile(resolve(root, "deployment.json"), JSON.stringify(manifest, null, 2) + "\n")
   await writeFile(resolve(root, ".nojekyll"), "")
-  console.log("Validated all GCC Market Entry language routes, video sections and " + files.size + " exported pages/assets for " + commit)
+  console.log("Validated custom-domain GCC Market Entry routes, video sections and " + files.size + " exported pages/assets for " + commit)
   return manifest
 }
 
@@ -65,7 +65,8 @@ export async function verify(siteUrl, commit) {
   manifestUrl.searchParams.set("release", commit)
   const manifest = JSON.parse((await get(manifestUrl)).toString("utf8"))
   assert.equal(manifest.commit, commit, "Pages is serving another release")
-  assert.equal(base.pathname, manifest.basePath + "/", "Deployment URL has the wrong base path")
+  assert.equal(base.pathname, "/", "Custom domain must serve from the root path")
+  assert.equal(manifest.basePath, "", "Published release has an unexpected base path")
   for (const route of routes) assert.ok(manifest.files.some((file) => file.path === route), "Missing route " + route)
   for (let offset = 0; offset < manifest.files.length; offset += 6) {
     await Promise.all(manifest.files.slice(offset, offset + 6).map(async (file) => {
@@ -74,7 +75,7 @@ export async function verify(siteUrl, commit) {
       assert.equal(digest(await get(url)), file.sha256, "Stale or incorrect published file: " + url.href)
     }))
   }
-  console.log("LIVE VERIFIED: " + commit + " at " + base.href + " — all routes, video sections and " + manifest.files.length + " pages/assets match the build.")
+  console.log("LIVE VERIFIED: " + commit + " at " + base.href + " — all custom-domain routes, video sections and " + manifest.files.length + " pages/assets match the build.")
 }
 
 if (process.argv[2] === "stamp") {
@@ -87,7 +88,7 @@ if (process.argv[2] === "stamp") {
       break
     } catch (error) {
       if (attempt === attempts) throw error
-      console.log("Waiting for Pages/cache propagation (" + attempt + "/" + attempts + "): " + error.message)
+      console.log("Waiting for custom-domain/DNS propagation (" + attempt + "/" + attempts + "): " + error.message)
       await delay(20000)
     }
   }
