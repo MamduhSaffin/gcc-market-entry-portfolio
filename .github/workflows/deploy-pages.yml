@@ -56,7 +56,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://gccentrymarket.me/
+      url: https://gccmarketentry.me/
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -74,4 +74,4 @@ jobs:
 
       - name: Confirm the release at the custom domain
         timeout-minutes: 15
-        run: node scripts/verify-pages.mjs live "https://gccentrymarket.me/" "$GITHUB_SHA"
+        run: node scripts/verify-pages.mjs live "https://gccmarketentry.me/" "$GITHUB_SHA"
