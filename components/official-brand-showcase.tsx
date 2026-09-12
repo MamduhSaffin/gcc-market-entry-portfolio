@@ -103,6 +103,8 @@ const copy = {
   },
 } as const
 
+const asset = (name: string) => `${SITE_BASE_PATH}/images/official/${name}`
+
 export function OfficialBrandShowcase() {
   const [target, setTarget] = useState<HTMLElement | null>(null)
   const [lang, setLang] = useState<Lang>("en")
@@ -161,8 +163,10 @@ export function OfficialBrandShowcase() {
             </div>
             <div className="bg-[#fffaf7] p-3 sm:p-5 lg:p-6">
               <img
-                src={`${SITE_BASE_PATH}/images/gcc-cta.png`}
-                alt="How GCC consumers discover products through eRomman"
+                src={asset("eromman-consumer-discovery-hq.webp")}
+                alt="How GCC consumers discover products through Arabic content, KOL engagement and paid digital discovery"
+                width={600}
+                height={400}
                 className="block h-auto w-full rounded-2xl border border-red-100 bg-white object-contain shadow-sm"
                 decoding="async"
                 fetchPriority="high"
@@ -184,9 +188,11 @@ export function OfficialBrandShowcase() {
             </div>
             <div className="flex items-center justify-center bg-[#f6f0ec] p-5 sm:p-7">
               <img
-                src={`${SITE_BASE_PATH}/images/official/eromman-bunting.svg`}
-                alt="eRomman GCC seller bunting"
-                className="block h-auto max-h-[800px] w-auto max-w-full rounded-xl object-contain shadow-xl"
+                src={asset("eromman-bunting-hq.webp")}
+                alt="eRomman Your Gateway to the Middle East seller bunting"
+                width={480}
+                height={1200}
+                className="block h-auto max-h-[820px] w-auto max-w-full rounded-xl object-contain shadow-xl"
                 loading="lazy"
                 decoding="async"
               />
@@ -205,8 +211,10 @@ export function OfficialBrandShowcase() {
             </div>
             <div className="bg-[#fffaf7] p-4 sm:p-6">
               <img
-                src={`${SITE_BASE_PATH}/images/gcc-hero.png`}
-                alt="eRomman GCC expansion overview"
+                src={asset("eromman-brochure-hq.webp")}
+                alt="eRomman sell to the Middle East GCC expansion overview"
+                width={1200}
+                height={675}
                 className="block h-auto w-full rounded-2xl border border-red-100 bg-white object-contain shadow-sm"
                 loading="lazy"
                 decoding="async"
@@ -224,14 +232,13 @@ export function OfficialBrandShowcase() {
               </div>
               <p className="mt-4 text-base leading-relaxed text-white/75">{t.ecosystemBody}</p>
             </div>
-
-            <div className="grid gap-3 sm:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {t.pillars.map(([title, body], index) => {
                 const Icon = icons[index] ?? Globe2
                 return (
-                  <div key={title} className="rounded-2xl border border-white/15 bg-white/10 p-5 text-center backdrop-blur-sm">
-                    <span className="mx-auto grid h-11 w-11 place-items-center rounded-xl bg-white text-primary shadow-sm"><Icon className="h-5 w-5" /></span>
-                    <p className="mt-3 text-sm font-black leading-tight">{title}</p>
+                  <div key={title} className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-primary shadow-sm"><Icon className="h-4 w-4" /></span>
+                    <h4 className="mt-3 text-sm font-black">{title}</h4>
                     <p className="mt-2 text-xs leading-relaxed text-white/70">{body}</p>
                   </div>
                 )
@@ -241,8 +248,11 @@ export function OfficialBrandShowcase() {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 rounded-2xl border border-red-100 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-bold leading-relaxed text-[#4a3934]">{t.presence}</p>
-          <div className="flex shrink-0 items-center gap-2 text-xs font-bold text-primary"><ShieldCheck className="h-4 w-4" />{t.note}</div>
+          <p className="text-sm font-bold text-[#3a302d]">{t.presence}</p>
+          <p className="flex max-w-xl items-start gap-2 text-xs leading-relaxed text-muted-foreground">
+            <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+            {t.note}
+          </p>
         </div>
       </div>
     </section>,
