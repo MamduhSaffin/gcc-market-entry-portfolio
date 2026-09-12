@@ -1087,10 +1087,10 @@ export function TrilingualSellerGuide({ lang }: { lang: Lang }) {
 
               <div className="relative overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_35px_90px_rgba(91,10,17,0.18)]">
                 <img
-                  src={SITE_BASE_PATH + "/images/gcc-hero.png"}
+                  src={SITE_BASE_PATH + "/images/official/eromman-gcc-bridge-hero.webp"}
                   alt="eRomman GCC market expansion"
-                  width={1200}
-                  height={900}
+                  width={1024}
+                  height={1024}
                   className="h-[430px] w-full object-cover sm:h-[520px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#6d0710]/80 via-transparent to-white/5" />

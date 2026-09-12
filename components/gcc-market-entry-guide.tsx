@@ -628,7 +628,7 @@ export function GccMarketEntryGuide({ lang }: { lang: Lang }) {
 
             <div className="relative">
               <div className="relative overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_35px_90px_rgba(91,10,17,0.18)]">
-                <img src={SITE_BASE_PATH + "/images/gcc-hero.png"} alt="GCC market entry with eRomman" width={1200} height={900} className="h-[470px] w-full object-cover sm:h-[560px]" />
+                <img src={SITE_BASE_PATH + "/images/official/eromman-gcc-bridge-hero.webp"} alt="GCC market entry with eRomman" width={1024} height={1024} className="h-[470px] w-full object-cover sm:h-[560px]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#6d0710]/85 via-transparent to-white/5" />
                 <div className="absolute left-5 top-5 rounded-xl border border-white/50 bg-white/92 px-4 py-3 shadow-lg backdrop-blur-md">
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">{t.portal}</p>
