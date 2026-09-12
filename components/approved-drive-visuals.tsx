@@ -31,6 +31,7 @@ const approved = {
   },
   officialHero: {
     id: "1Ae2FhKHrRMS2z37iNa2xLB15GiiihfXs",
+    localSrc: "/images/approved/06-eRomman-GCC-Official-Market-Entry-Hero.png",
     name: "GCC Market Entry with eRomman",
     alt: "Official eRomman GCC market entry hero",
     width: 1672,
@@ -41,7 +42,8 @@ const approved = {
 type ApprovedImage = (typeof approved)[keyof typeof approved]
 
 function DriveImage({ image, priority = false, className = "" }: { image: ApprovedImage; priority?: boolean; className?: string }) {
-  const [src, setSrc] = useState(driveThumb(image.id))
+  const localSrc = "localSrc" in image ? image.localSrc : null
+  const [src, setSrc] = useState(localSrc ?? driveThumb(image.id))
   return (
     <img
       src={src}
@@ -53,6 +55,7 @@ function DriveImage({ image, priority = false, className = "" }: { image: Approv
       decoding="async"
       referrerPolicy="no-referrer"
       onError={() => {
+        if (localSrc) return
         const fallback = driveView(image.id)
         if (src !== fallback) setSrc(fallback)
       }}
