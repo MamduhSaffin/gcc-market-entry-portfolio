@@ -15,20 +15,6 @@ const approved = {
     width: 793,
     height: 1983,
   },
-  discovery: {
-    id: "1ZZLEzUISf81Av0s8ei-dYIr-z0FZNHXB",
-    name: "GCC Consumer Discovery",
-    alt: "How GCC consumers discover products through eRomman",
-    width: 1672,
-    height: 941,
-  },
-  landingHero: {
-    id: "1oMVCO_eK9yA0ITfxPsYhMttnz9cm34QI",
-    name: "GCC Landing Page Hero",
-    alt: "Bridging Malaysian Brands to Millions in the Middle East",
-    width: 1672,
-    height: 941,
-  },
   discoveryInfographic: {
     id: "18VeQbB_dpM7vJS_4WxhclxIfunxO4p6M",
     name: "GCC Consumer Discovery Infographic",
@@ -45,7 +31,7 @@ const approved = {
   },
   officialHero: {
     id: "1Ae2FhKHrRMS2z37iNa2xLB15GiiihfXs",
-    name: "Official GCC Market Entry Hero",
+    name: "GCC Market Entry with eRomman",
     alt: "Official eRomman GCC market entry hero",
     width: 1672,
     height: 941,
@@ -55,7 +41,7 @@ const approved = {
 type ApprovedImage = (typeof approved)[keyof typeof approved]
 
 function DriveImage({ image, priority = false, className = "" }: { image: ApprovedImage; priority?: boolean; className?: string }) {
-  const [src, setSrc] = useState(driveView(image.id))
+  const [src, setSrc] = useState(driveThumb(image.id))
   return (
     <img
       src={src}
@@ -67,7 +53,7 @@ function DriveImage({ image, priority = false, className = "" }: { image: Approv
       decoding="async"
       referrerPolicy="no-referrer"
       onError={() => {
-        const fallback = driveThumb(image.id)
+        const fallback = driveView(image.id)
         if (src !== fallback) setSrc(fallback)
       }}
       className={className}
@@ -128,8 +114,6 @@ export function ApprovedDriveVisuals() {
 
         <div className="mt-12 space-y-7">
           <WideVisual image={approved.officialHero} priority />
-          <WideVisual image={approved.landingHero} />
-          <WideVisual image={approved.discovery} />
           <WideVisual image={approved.discoveryInfographic} />
           <WideVisual image={approved.brochure} />
         </div>
