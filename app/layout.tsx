@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { Analytics } from "@/components/analytics"
-import { OfficialBrandShowcase } from "@/components/official-brand-showcase"
+import { ApprovedDriveVisuals } from "@/components/approved-drive-visuals"
 import { OfficialErommanIdentity } from "@/components/official-eromman-identity"
-import { OfficialVisualPlacement } from "@/components/official-visual-placement"
 import { EROMMAN_LINKS, SELLER_SUPPORT } from "@/lib/links"
 import { SITE_URL } from "@/lib/site"
 
@@ -122,8 +121,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema).replace(/</g, "\\u003c") }} />
         {children}
         <OfficialErommanIdentity />
-        <OfficialBrandShowcase />
-        <OfficialVisualPlacement />
+        <ApprovedDriveVisuals />
         <Analytics />
       </body>
     </html>
