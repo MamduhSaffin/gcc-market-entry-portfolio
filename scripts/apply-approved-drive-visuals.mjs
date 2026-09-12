@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises"
 
-const heroUrl = "https://drive.google.com/uc?export=view&id=1oMVCO_eK9yA0ITfxPsYhMttnz9cm34QI"
+const heroSrc = 'src={SITE_BASE_PATH + "/images/approved/03-eRomman-GCC-Landing-Page-Hero.png"}'
 
 const files = [
   "components/gcc-market-entry-guide.tsx",
@@ -12,7 +12,7 @@ for (const file of files) {
 
   source = source.replaceAll(
     'src={SITE_BASE_PATH + "/images/official/eromman-gcc-bridge-hero.webp"}',
-    `src="${heroUrl}"`,
+    heroSrc,
   )
 
   source = source
@@ -28,4 +28,4 @@ for (const file of files) {
   await writeFile(file, source)
 }
 
-console.log("Applied approved Google Drive hero visual to seller-facing routes")
+console.log("Applied approved local landing hero visual to seller-facing routes")
