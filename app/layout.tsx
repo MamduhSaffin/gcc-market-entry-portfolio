@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { Analytics } from "@/components/analytics"
-import { HeroVisualUpgrade } from "@/components/hero-visual-upgrade"
 import { OfficialBrandShowcase } from "@/components/official-brand-showcase"
 import { EROMMAN_LINKS, SELLER_SUPPORT } from "@/lib/links"
 import { SITE_URL } from "@/lib/site"
@@ -120,7 +119,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema).replace(/</g, "\\u003c") }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema).replace(/</g, "\\u003c") }} />
         {children}
-        <HeroVisualUpgrade />
         <OfficialBrandShowcase />
         <Analytics />
       </body>
