@@ -42,6 +42,9 @@ jobs:
       - name: Add company profile and seller success videos to the seller guide
         run: node scripts/inject-video-sections.mjs
 
+      - name: Apply approved eRomman Google Drive visuals
+        run: node scripts/apply-approved-drive-visuals.mjs
+
       - name: Build static export
         run: pnpm build
 
