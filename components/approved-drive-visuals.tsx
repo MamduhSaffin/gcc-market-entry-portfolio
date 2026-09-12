@@ -75,11 +75,39 @@ function DriveImage({ image, priority = false, className = "" }: { image: Approv
   )
 }
 
+function WideVisual({ image, priority = false }: { image: ApprovedImage; priority?: boolean }) {
+  return (
+    <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_20px_55px_rgba(93,13,18,0.08)]">
+      <div className="flex items-center gap-2 border-b border-red-100 px-5 py-4 text-sm font-black text-[#2c2421]">
+        <ImageIcon className="h-4 w-4 text-primary" />
+        {image.name}
+      </div>
+      <div className="bg-[#fffaf7] p-2 sm:p-4 lg:p-5">
+        <DriveImage image={image} priority={priority} className="block h-auto w-full rounded-2xl object-contain" />
+      </div>
+    </article>
+  )
+}
+
 export function ApprovedDriveVisuals() {
   const [target, setTarget] = useState<HTMLElement | null>(null)
 
   useEffect(() => {
-    setTarget(document.querySelector("main"))
+    const main = document.querySelector("main")
+    if (!main) return
+
+    let host = document.querySelector<HTMLElement>("[data-approved-drive-visuals-host]")
+    if (!host) {
+      host = document.createElement("div")
+      host.dataset.approvedDriveVisualsHost = "true"
+      const sections = Array.from(main.children).filter(
+        (node): node is HTMLElement => node instanceof HTMLElement && node.tagName === "SECTION",
+      )
+      const trustSection = sections[1]
+      if (trustSection) trustSection.insertAdjacentElement("afterend", host)
+      else main.appendChild(host)
+    }
+    setTarget(host)
   }, [])
 
   if (!target) return null
@@ -92,45 +120,29 @@ export function ApprovedDriveVisuals() {
             <ShieldCheck className="h-4 w-4" />
             Official eRomman GCC materials
           </span>
-          <h2 className="mt-5 text-3xl font-black tracking-tight text-[#211916] sm:text-4xl lg:text-5xl">See the official GCC market-entry materials</h2>
+          <h2 className="mt-5 text-3xl font-black tracking-tight text-[#211916] sm:text-4xl lg:text-5xl">Official visuals for GCC market entry</h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            These visuals are the approved eRomman materials supplied for seller outreach and GCC market-entry communication.
+            The visuals below are the exact seller-outreach materials supplied by eRomman for this website.
           </p>
         </div>
 
-        <div className="mt-12 overflow-hidden rounded-[2rem] border border-red-100 bg-white p-2 shadow-[0_28px_80px_rgba(93,13,18,0.12)] sm:p-4">
-          <DriveImage image={approved.officialHero} priority className="block h-auto w-full rounded-[1.5rem] object-contain" />
+        <div className="mt-12 space-y-7">
+          <WideVisual image={approved.officialHero} priority />
+          <WideVisual image={approved.landingHero} />
+          <WideVisual image={approved.discovery} />
+          <WideVisual image={approved.discoveryInfographic} />
+          <WideVisual image={approved.brochure} />
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_20px_55px_rgba(93,13,18,0.08)]">
-            <div className="flex items-center gap-2 border-b border-red-100 px-5 py-4 text-sm font-black text-[#2c2421]"><ImageIcon className="h-4 w-4 text-primary" />{approved.landingHero.name}</div>
-            <div className="bg-[#fffaf7] p-3 sm:p-4"><DriveImage image={approved.landingHero} className="block h-auto w-full rounded-xl object-contain" /></div>
-          </article>
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_20px_55px_rgba(93,13,18,0.08)]">
-            <div className="flex items-center gap-2 border-b border-red-100 px-5 py-4 text-sm font-black text-[#2c2421]"><ImageIcon className="h-4 w-4 text-primary" />{approved.discovery.name}</div>
-            <div className="bg-[#fffaf7] p-3 sm:p-4"><DriveImage image={approved.discovery} className="block h-auto w-full rounded-xl object-contain" /></div>
-          </article>
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_20px_55px_rgba(93,13,18,0.08)]">
-            <div className="flex items-center gap-2 border-b border-red-100 px-5 py-4 text-sm font-black text-[#2c2421]"><ImageIcon className="h-4 w-4 text-primary" />{approved.discoveryInfographic.name}</div>
-            <div className="bg-[#fffaf7] p-3 sm:p-4"><DriveImage image={approved.discoveryInfographic} className="block h-auto w-full rounded-xl object-contain" /></div>
-          </article>
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_20px_55px_rgba(93,13,18,0.08)]">
-            <div className="flex items-center gap-2 border-b border-red-100 px-5 py-4 text-sm font-black text-[#2c2421]"><ImageIcon className="h-4 w-4 text-primary" />{approved.brochure.name}</div>
-            <div className="bg-[#fffaf7] p-3 sm:p-4"><DriveImage image={approved.brochure} className="block h-auto w-full rounded-xl object-contain" /></div>
-          </article>
-        </div>
-
-        <div className="mt-8 grid gap-6 lg:grid-cols-[0.45fr_1.55fr] lg:items-start">
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_20px_55px_rgba(93,13,18,0.08)]">
-            <div className="flex items-center gap-2 border-b border-red-100 px-5 py-4 text-sm font-black text-[#2c2421]"><ImageIcon className="h-4 w-4 text-primary" />{approved.rollup.name}</div>
-            <div className="flex justify-center bg-[#f7f1ed] p-5"><DriveImage image={approved.rollup} className="block h-auto max-h-[900px] w-auto max-w-full rounded-xl object-contain shadow-lg" /></div>
-          </article>
-          <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_20px_55px_rgba(93,13,18,0.08)]">
-            <div className="flex items-center gap-2 border-b border-red-100 px-5 py-4 text-sm font-black text-[#2c2421]"><ImageIcon className="h-4 w-4 text-primary" />{approved.officialHero.name}</div>
-            <div className="bg-[#fffaf7] p-3 sm:p-4"><DriveImage image={approved.officialHero} className="block h-auto w-full rounded-xl object-contain" /></div>
-          </article>
-        </div>
+        <article className="mx-auto mt-8 max-w-xl overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_20px_55px_rgba(93,13,18,0.08)]">
+          <div className="flex items-center gap-2 border-b border-red-100 px-5 py-4 text-sm font-black text-[#2c2421]">
+            <ImageIcon className="h-4 w-4 text-primary" />
+            {approved.rollup.name}
+          </div>
+          <div className="flex justify-center bg-[#f7f1ed] p-5 sm:p-7">
+            <DriveImage image={approved.rollup} className="block h-auto max-h-[1050px] w-auto max-w-full rounded-xl object-contain shadow-lg" />
+          </div>
+        </article>
       </div>
     </section>,
     target,
