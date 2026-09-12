@@ -6,6 +6,8 @@ import { ImageIcon, ShieldCheck } from "lucide-react"
 
 const driveView = (id: string) => `https://drive.google.com/uc?export=view&id=${id}`
 const driveThumb = (id: string) => `https://drive.google.com/thumbnail?id=${id}&sz=w2400`
+const DIGITAL_MARKETING_FOLDER = "https://drive.google.com/drive/folders/126KfsbxdYERhkXSjD1AYQX31cpd7sqS9"
+const EROMMAN_WEBSITE = "https://www.eromman.com/"
 
 const approved = {
   rollup: {
@@ -64,7 +66,9 @@ function DriveImage({ image, priority = false, className = "" }: { image: Approv
   )
 }
 
-function WideVisual({ image, priority = false }: { image: ApprovedImage; priority?: boolean }) {
+function WideVisual({ image, priority = false, href }: { image: ApprovedImage; priority?: boolean; href?: string }) {
+  const visual = <DriveImage image={image} priority={priority} className="block h-auto w-full rounded-2xl object-contain" />
+
   return (
     <article className="overflow-hidden rounded-[2rem] border border-red-100 bg-white shadow-[0_20px_55px_rgba(93,13,18,0.08)]">
       <div className="flex items-center gap-2 border-b border-red-100 px-5 py-4 text-sm font-black text-[#2c2421]">
@@ -72,7 +76,20 @@ function WideVisual({ image, priority = false }: { image: ApprovedImage; priorit
         {image.name}
       </div>
       <div className="bg-[#fffaf7] p-2 sm:p-4 lg:p-5">
-        <DriveImage image={image} priority={priority} className="block h-auto w-full rounded-2xl object-contain" />
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open ${image.name}`}
+            title={`Open ${image.name}`}
+            className="block cursor-pointer"
+          >
+            {visual}
+          </a>
+        ) : (
+          visual
+        )}
       </div>
     </article>
   )
@@ -116,8 +133,8 @@ export function ApprovedDriveVisuals() {
         </div>
 
         <div className="mt-12 space-y-7">
-          <WideVisual image={approved.officialHero} priority />
-          <WideVisual image={approved.discoveryInfographic} />
+          <WideVisual image={approved.officialHero} priority href={EROMMAN_WEBSITE} />
+          <WideVisual image={approved.discoveryInfographic} href={DIGITAL_MARKETING_FOLDER} />
           <WideVisual image={approved.brochure} />
         </div>
 
