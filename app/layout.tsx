@@ -4,6 +4,7 @@ import { Analytics } from "@/components/analytics"
 import { HeroVisualUpgrade } from "@/components/hero-visual-upgrade"
 import { OfficialBrandShowcase } from "@/components/official-brand-showcase"
 import { OfficialErommanIdentity } from "@/components/official-eromman-identity"
+import { OfficialVisualPlacement } from "@/components/official-visual-placement"
 import { EROMMAN_LINKS, SELLER_SUPPORT } from "@/lib/links"
 import { SITE_URL } from "@/lib/site"
 
@@ -124,6 +125,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <OfficialErommanIdentity />
         <HeroVisualUpgrade />
         <OfficialBrandShowcase />
+        <OfficialVisualPlacement />
         <Analytics />
       </body>
     </html>
